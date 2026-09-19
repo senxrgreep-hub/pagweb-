@@ -87,3 +87,677 @@ collections:
               - label: Horario (por ejemplo, “10:00 a 20:30 hs” o “Cerrado”)
                 name: horario
                 widget: string
+
+      - name: textos
+        label: Textos de la página
+        file: datos/textos.json
+        fields:
+          - label: "Título y descripción (Google y pestaña del navegador)"
+            name: seo
+            widget: object
+            collapsed: true
+            fields:
+              - label: "Título de la pestaña del navegador"
+                name: titulo
+                widget: string
+                required: false
+              - label: "Descripción que aparece en Google"
+                name: descripcion
+                widget: text
+                required: false
+          - label: "Nombre del salón (logo)"
+            name: marca
+            widget: object
+            collapsed: true
+            fields:
+              - label: "Palabra escrita a mano (“Retro”)"
+                name: retro
+                widget: string
+                required: false
+              - label: "Palabra grande del logo (“GREEN”)"
+                name: green
+                widget: string
+                required: false
+              - label: "Iniciales del cuadradito (“RG”)"
+                name: iniciales
+                widget: string
+                required: false
+          - label: "Menú de arriba"
+            name: encabezado
+            widget: object
+            collapsed: true
+            fields:
+              - label: "Texto chico debajo del logo"
+                name: logo_bajada
+                widget: string
+                required: false
+              - label: "Menú: Inicio"
+                name: nav_inicio
+                widget: string
+                required: false
+              - label: "Menú: Servicios"
+                name: nav_servicios
+                widget: string
+                required: false
+              - label: "Menú: Nosotros"
+                name: nav_nosotros
+                widget: string
+                required: false
+              - label: "Menú: Galería"
+                name: nav_galeria
+                widget: string
+                required: false
+              - label: "Menú: Contacto"
+                name: nav_contacto
+                widget: string
+                required: false
+              - label: "Botón de música"
+                name: boton_musica
+                widget: string
+                required: false
+              - label: "Botón de reservar del menú del celular"
+                name: mobile_reservar
+                widget: string
+                required: false
+              - label: "Título del panel de música"
+                name: musica_titulo
+                widget: string
+                required: false
+              - label: "Botón para abrir Spotify"
+                name: musica_boton
+                widget: string
+                required: false
+              - label: "Botón verde “Reservar turno”"
+                name: boton_reservar
+                widget: string
+                required: false
+          - label: "Portada (la primera pantalla)"
+            name: hero
+            widget: object
+            collapsed: true
+            fields:
+              - label: "Cartelito de arriba"
+                name: insignia
+                widget: string
+                required: false
+              - label: "Frase principal"
+                name: frase
+                widget: string
+                required: false
+              - label: "Frase debajo de la principal"
+                name: bajada
+                widget: string
+                required: false
+              - label: "Botón “Ver servicios”"
+                name: boton_servicios
+                widget: string
+                required: false
+              - label: "Sticker violeta (arriba a la derecha)"
+                name: sticker_1
+                widget: string
+                required: false
+              - label: "Sticker verde (arriba a la derecha)"
+                name: sticker_2
+                widget: string
+                required: false
+              - label: "Dato 1 (abajo de los botones)"
+                name: dato_1
+                widget: string
+                required: false
+              - label: "Dato 2 (abajo de los botones)"
+                name: dato_2
+                widget: string
+                required: false
+              - label: "Dato 3 (abajo de los botones)"
+                name: dato_3
+                widget: string
+                required: false
+          - label: "Sección “Más que una peluquería”"
+            name: nosotros
+            widget: object
+            collapsed: true
+            fields:
+              - label: "Etiqueta verde de la sección"
+                name: etiqueta
+                widget: string
+                required: false
+              - label: "Título (parte blanca)"
+                name: titulo
+                widget: string
+                required: false
+              - label: "Título (parte verde)"
+                name: titulo_verde
+                widget: string
+                required: false
+              - label: "Párrafo principal"
+                name: parrafo
+                widget: text
+                required: false
+              - label: "Palabra escrita a mano del recuadro"
+                name: cita_sello
+                widget: string
+                required: false
+              - label: "Frase destacada del recuadro"
+                name: cita_titulo
+                widget: string
+                required: false
+              - label: "Texto del recuadro"
+                name: cita_texto
+                widget: text
+                required: false
+              - label: "Cuadrito 1"
+                name: punto_1
+                widget: string
+                required: false
+              - label: "Cuadrito 2"
+                name: punto_2
+                widget: string
+                required: false
+              - label: "Cuadrito 3"
+                name: punto_3
+                widget: string
+                required: false
+              - label: "Cuadrito 4"
+                name: punto_4
+                widget: string
+                required: false
+              - label: "Cartelito sobre la foto"
+                name: foto_etiqueta
+                widget: string
+                required: false
+              - label: "Sticker violeta de la foto"
+                name: foto_sticker
+                widget: string
+                required: false
+          - label: "Sección “Nuestros servicios”"
+            name: servicios
+            widget: object
+            collapsed: true
+            fields:
+              - label: "Etiqueta verde de la sección"
+                name: etiqueta
+                widget: string
+                required: false
+              - label: "Título (parte blanca)"
+                name: titulo
+                widget: string
+                required: false
+              - label: "Título (parte verde)"
+                name: titulo_verde
+                widget: string
+                required: false
+              - label: "Texto al costado del título"
+                name: bajada
+                widget: text
+                required: false
+              - label: "Servicio 1 · línea de arriba"
+                name: s1_numero
+                widget: string
+                required: false
+              - label: "Servicio 1 · título"
+                name: s1_titulo
+                widget: string
+                required: false
+              - label: "Servicio 1 · descripción"
+                name: s1_texto
+                widget: text
+                required: false
+              - label: "Servicio 1 · línea de abajo"
+                name: s1_pie
+                widget: string
+                required: false
+              - label: "Servicio 2 · línea de arriba"
+                name: s2_numero
+                widget: string
+                required: false
+              - label: "Servicio 2 · título"
+                name: s2_titulo
+                widget: string
+                required: false
+              - label: "Servicio 2 · descripción"
+                name: s2_texto
+                widget: string
+                required: false
+              - label: "Servicio 2 · línea de abajo"
+                name: s2_pie
+                widget: string
+                required: false
+              - label: "Servicio 3 · cartelito violeta"
+                name: s3_insignia
+                widget: string
+                required: false
+              - label: "Servicio 3 · línea de arriba"
+                name: s3_numero
+                widget: string
+                required: false
+              - label: "Servicio 3 · título"
+                name: s3_titulo
+                widget: string
+                required: false
+              - label: "Servicio 3 · descripción"
+                name: s3_texto
+                widget: string
+                required: false
+              - label: "Servicio 3 · línea de abajo"
+                name: s3_pie
+                widget: string
+                required: false
+              - label: "Servicio 4 · línea de arriba"
+                name: s4_numero
+                widget: string
+                required: false
+              - label: "Servicio 4 · título"
+                name: s4_titulo
+                widget: string
+                required: false
+              - label: "Servicio 4 · descripción"
+                name: s4_texto
+                widget: string
+                required: false
+              - label: "Servicio 4 · línea de abajo"
+                name: s4_pie
+                widget: string
+                required: false
+              - label: "Servicio 5 · línea de arriba"
+                name: s5_numero
+                widget: string
+                required: false
+              - label: "Servicio 5 · título"
+                name: s5_titulo
+                widget: string
+                required: false
+              - label: "Servicio 5 · descripción"
+                name: s5_texto
+                widget: string
+                required: false
+              - label: "Servicio 5 · línea de abajo"
+                name: s5_pie
+                widget: string
+                required: false
+              - label: "Servicio 6 · cartelito verde"
+                name: s6_insignia
+                widget: string
+                required: false
+              - label: "Servicio 6 · línea de arriba"
+                name: s6_numero
+                widget: string
+                required: false
+              - label: "Servicio 6 · título"
+                name: s6_titulo
+                widget: string
+                required: false
+              - label: "Servicio 6 · descripción"
+                name: s6_texto
+                widget: string
+                required: false
+              - label: "Servicio 6 · línea de abajo"
+                name: s6_pie
+                widget: string
+                required: false
+              - label: "Enlace de cada servicio"
+                name: enlace_reservar
+                widget: string
+                required: false
+              - label: "Enlace del servicio de productos"
+                name: enlace_consultar
+                widget: string
+                required: false
+              - label: "Recuadro de abajo · título"
+                name: consulta_titulo
+                widget: string
+                required: false
+              - label: "Recuadro de abajo · texto"
+                name: consulta_texto
+                widget: string
+                required: false
+              - label: "Recuadro de abajo · botón"
+                name: consulta_boton
+                widget: string
+                required: false
+          - label: "Sección “Historia”"
+            name: historia
+            widget: object
+            collapsed: true
+            fields:
+              - label: "Palabra escrita a mano"
+                name: sello
+                widget: string
+                required: false
+              - label: "Título (parte blanca)"
+                name: titulo
+                widget: string
+                required: false
+              - label: "Título (parte verde)"
+                name: titulo_verde
+                widget: string
+                required: false
+              - label: "Cartelito verde"
+                name: insignia
+                widget: string
+                required: false
+              - label: "Primer párrafo"
+                name: parrafo_1
+                widget: text
+                required: false
+              - label: "Segundo párrafo"
+                name: parrafo_2
+                widget: text
+                required: false
+              - label: "Frase destacada"
+                name: cita
+                widget: string
+                required: false
+              - label: "Firma de la frase"
+                name: cita_autor
+                widget: string
+                required: false
+          - label: "Sección “No es solo un corte”"
+            name: experiencia
+            widget: object
+            collapsed: true
+            fields:
+              - label: "Palabra escrita a mano"
+                name: sello
+                widget: string
+                required: false
+              - label: "Título (parte blanca)"
+                name: titulo
+                widget: string
+                required: false
+              - label: "Título (parte verde)"
+                name: titulo_verde
+                widget: string
+                required: false
+              - label: "Texto debajo del título"
+                name: bajada
+                widget: text
+                required: false
+              - label: "Lema del recuadro violeta"
+                name: lema
+                widget: string
+                required: false
+              - label: "Tarjeta 1 · título"
+                name: card1_titulo
+                widget: string
+                required: false
+              - label: "Tarjeta 1 · texto"
+                name: card1_texto
+                widget: text
+                required: false
+              - label: "Tarjeta 1 · enlace a Spotify"
+                name: card1_enlace
+                widget: string
+                required: false
+              - label: "Cartelito sobre la foto del medio"
+                name: foto_pie
+                widget: string
+                required: false
+              - label: "Tarjeta 2 · título"
+                name: card2_titulo
+                widget: string
+                required: false
+              - label: "Tarjeta 2 · texto"
+                name: card2_texto
+                widget: text
+                required: false
+          - label: "Sección “Juegos y películas clásicas”"
+            name: clasicos
+            widget: object
+            collapsed: true
+            fields:
+              - label: "Etiqueta verde de la sección"
+                name: etiqueta
+                widget: string
+                required: false
+              - label: "Título (parte blanca)"
+                name: titulo
+                widget: string
+                required: false
+              - label: "Título (parte verde)"
+                name: titulo_verde
+                widget: string
+                required: false
+              - label: "Texto al costado del título"
+                name: bajada
+                widget: string
+                required: false
+              - label: "Juegos · línea de arriba"
+                name: juegos_etiqueta
+                widget: string
+                required: false
+              - label: "Juegos · título"
+                name: juegos_titulo
+                widget: string
+                required: false
+              - label: "Juegos · descripción"
+                name: juegos_texto
+                widget: text
+                required: false
+              - label: "Películas · línea de arriba"
+                name: pelis_etiqueta
+                widget: string
+                required: false
+              - label: "Películas · título"
+                name: pelis_titulo
+                widget: string
+                required: false
+              - label: "Películas · descripción"
+                name: pelis_texto
+                widget: string
+                required: false
+          - label: "Títulos de la galería"
+            name: galeria
+            widget: object
+            collapsed: true
+            fields:
+              - label: "Etiqueta verde de la sección"
+                name: etiqueta
+                widget: string
+                required: false
+              - label: "Título (parte blanca)"
+                name: titulo
+                widget: string
+                required: false
+              - label: "Título (parte verde)"
+                name: titulo_verde
+                widget: string
+                required: false
+              - label: "Cartelito al costado del título"
+                name: insignia
+                widget: string
+                required: false
+          - label: "Ubicación, horarios y contacto"
+            name: ubicacion
+            widget: object
+            collapsed: true
+            fields:
+              - label: "Etiqueta verde de la sección"
+                name: etiqueta
+                widget: string
+                required: false
+              - label: "Título (parte blanca)"
+                name: titulo
+                widget: string
+                required: false
+              - label: "Título (parte verde)"
+                name: titulo_verde
+                widget: string
+                required: false
+              - label: "Palabra “Dirección”"
+                name: direccion_etiqueta
+                widget: string
+                required: false
+              - label: "Dirección del salón (también cambia el enlace a Google Maps)"
+                name: direccion
+                widget: string
+                required: false
+              - label: "Ciudad"
+                name: ciudad
+                widget: string
+                required: false
+              - label: "Palabra “Horarios”"
+                name: horarios_etiqueta
+                widget: string
+                required: false
+              - label: "Palabra “WhatsApp”"
+                name: whatsapp_etiqueta
+                widget: string
+                required: false
+              - label: "Número de WhatsApp (cambia también todos los botones de reservar)"
+                name: whatsapp_numero
+                widget: string
+                required: false
+              - label: "Palabra “Instagram”"
+                name: instagram_etiqueta
+                widget: string
+                required: false
+              - label: "Usuario de Instagram (cambia también el enlace)"
+                name: instagram_usuario
+                widget: string
+                required: false
+              - label: "Botón “Cómo llegar”"
+                name: boton_mapa
+                widget: string
+                required: false
+              - label: "Mapa · nombre del salón"
+                name: mapa_nombre
+                widget: string
+                required: false
+              - label: "Mapa · barrio"
+                name: mapa_barrio
+                widget: string
+                required: false
+              - label: "Mapa · botón"
+                name: mapa_boton
+                widget: string
+                required: false
+              - label: "Mapa · cartelito de la esquina"
+                name: mapa_etiqueta
+                widget: string
+                required: false
+          - label: "Sección “¿Sacamos turno?”"
+            name: contacto
+            widget: object
+            collapsed: true
+            fields:
+              - label: "Cartelito violeta"
+                name: insignia
+                widget: string
+                required: false
+              - label: "Título (parte blanca)"
+                name: titulo
+                widget: string
+                required: false
+              - label: "Título (parte verde)"
+                name: titulo_verde
+                widget: string
+                required: false
+              - label: "Texto debajo del título"
+                name: bajada
+                widget: string
+                required: false
+              - label: "Botón de WhatsApp"
+                name: boton_whatsapp
+                widget: string
+                required: false
+              - label: "Botón de Instagram"
+                name: boton_instagram
+                widget: string
+                required: false
+              - label: "Nota de abajo"
+                name: nota
+                widget: string
+                required: false
+          - label: "Pie de página"
+            name: pie
+            widget: object
+            collapsed: true
+            fields:
+              - label: "Lema debajo del logo"
+                name: lema
+                widget: string
+                required: false
+              - label: "Descripción del salón"
+                name: descripcion
+                widget: text
+                required: false
+              - label: "Cartelito con la dirección"
+                name: direccion
+                widget: string
+                required: false
+              - label: "Título de la columna de enlaces"
+                name: nav_titulo
+                widget: string
+                required: false
+              - label: "Enlace 1"
+                name: nav_1
+                widget: string
+                required: false
+              - label: "Enlace 2"
+                name: nav_2
+                widget: string
+                required: false
+              - label: "Enlace 3"
+                name: nav_3
+                widget: string
+                required: false
+              - label: "Enlace 4"
+                name: nav_4
+                widget: string
+                required: false
+              - label: "Enlace 5"
+                name: nav_5
+                widget: string
+                required: false
+              - label: "Título de la columna de redes"
+                name: redes_titulo
+                widget: string
+                required: false
+              - label: "Red 1"
+                name: red_instagram
+                widget: string
+                required: false
+              - label: "Red 2"
+                name: red_whatsapp
+                widget: string
+                required: false
+              - label: "Red 3"
+                name: red_spotify
+                widget: string
+                required: false
+              - label: "Red 4"
+                name: red_mapa
+                widget: string
+                required: false
+              - label: "Recuadro de música · título"
+                name: sonido_titulo
+                widget: string
+                required: false
+              - label: "Recuadro de música · texto"
+                name: sonido_texto
+                widget: string
+                required: false
+              - label: "Recuadro de música · botón"
+                name: sonido_boton
+                widget: string
+                required: false
+              - label: "Línea de derechos reservados"
+                name: copyright
+                widget: string
+                required: false
+              - label: "Ciudad de la última línea"
+                name: ciudad
+                widget: string
+                required: false
+              - label: "Lema de la última línea"
+                name: lema_final
+                widget: string
+                required: false
+              - label: "Enlace al panel de administración"
+                name: acceso
+                widget: string
+                required: false
+              - label: "Botón flotante del celular"
+                name: boton_flotante
+                widget: string
+                required: false

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Peluquería y barbería con identidad retro y rockera en Córdoba. Cortes masculinos y femeninos, barbería, color, nutrición y venta de productos en Av. Emilio Caraffa 2086.">
   <title>Retro Green Salón · Peluquería & Barbería Rock en Córdoba</title>
   <!-- Google Fonts: Oswald (bold condensed display), Montserrat (clean sans body), Permanent Marker (authentic retro handwritten accent) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -155,34 +156,34 @@
       <!-- BRAND LOGO -->
       <a href="#hero" class="flex items-center gap-3 group">
         <div class="w-10 h-10 border-2 border-brandGreen flex items-center justify-center bg-black shadow-neon-green-sm group-hover:scale-105 transition-transform">
-          <span class="text-brandGreen font-display text-2xl font-bold tracking-tighter">RG</span>
+          <span class="text-brandGreen font-display text-2xl font-bold tracking-tighter" data-texto="marca.iniciales">RG</span>
         </div>
         <div class="flex flex-col">
           <div class="flex items-baseline gap-1.5">
-            <span class="font-script text-brandViolet text-sm sm:text-base -rotate-6 transform inline-block">Retro</span>
-            <span class="font-display text-2xl sm:text-3xl font-extrabold tracking-wider text-white group-hover:text-brandGreen transition-colors">GREEN</span>
+            <span class="font-script text-brandViolet text-sm sm:text-base -rotate-6 transform inline-block" data-texto="marca.retro">Retro</span>
+            <span class="font-display text-2xl sm:text-3xl font-extrabold tracking-wider text-white group-hover:text-brandGreen transition-colors" data-texto="marca.green">GREEN</span>
           </div>
-          <span class="text-[9px] font-mono tracking-widest text-brandGreen uppercase font-semibold -mt-1">Salón · Barbería</span>
+          <span class="text-[9px] font-mono tracking-widest text-brandGreen uppercase font-semibold -mt-1" data-texto="encabezado.logo_bajada">Salón · Barbería</span>
         </div>
       </a>
 
       <!-- DESKTOP NAV -->
       <nav class="hidden lg:flex items-center gap-7" aria-label="Navegación principal">
-        <a href="#hero" class="text-sm font-semibold tracking-wider text-white hover:text-brandGreen transition-colors uppercase relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brandGreen hover:after:w-full after:transition-all">INICIO</a>
-        <a href="#servicios" class="text-sm font-semibold tracking-wider text-white hover:text-brandGreen transition-colors uppercase relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brandGreen hover:after:w-full after:transition-all">SERVICIOS</a>
-        <a href="#nosotros" class="text-sm font-semibold tracking-wider text-white hover:text-brandGreen transition-colors uppercase relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brandGreen hover:after:w-full after:transition-all">NOSOTROS</a>
-        <a href="#galeria" class="text-sm font-semibold tracking-wider text-white hover:text-brandGreen transition-colors uppercase relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brandGreen hover:after:w-full after:transition-all">GALERÍA</a>
-        <a href="#contacto" class="text-sm font-semibold tracking-wider text-white hover:text-brandGreen transition-colors uppercase relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brandGreen hover:after:w-full after:transition-all">CONTACTO</a>
+        <a href="#hero" class="text-sm font-semibold tracking-wider text-white hover:text-brandGreen transition-colors uppercase relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brandGreen hover:after:w-full after:transition-all" data-texto="encabezado.nav_inicio">INICIO</a>
+        <a href="#servicios" class="text-sm font-semibold tracking-wider text-white hover:text-brandGreen transition-colors uppercase relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brandGreen hover:after:w-full after:transition-all" data-texto="encabezado.nav_servicios">SERVICIOS</a>
+        <a href="#nosotros" class="text-sm font-semibold tracking-wider text-white hover:text-brandGreen transition-colors uppercase relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brandGreen hover:after:w-full after:transition-all" data-texto="encabezado.nav_nosotros">NOSOTROS</a>
+        <a href="#galeria" class="text-sm font-semibold tracking-wider text-white hover:text-brandGreen transition-colors uppercase relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brandGreen hover:after:w-full after:transition-all" data-texto="encabezado.nav_galeria">GALERÍA</a>
+        <a href="#contacto" class="text-sm font-semibold tracking-wider text-white hover:text-brandGreen transition-colors uppercase relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brandGreen hover:after:w-full after:transition-all" data-texto="encabezado.nav_contacto">CONTACTO</a>
       </nav>
 
       <!-- MUSIC, CTA BUTTON & MOBILE TOGGLE -->
       <div class="flex items-center gap-3 sm:gap-4">
         <button id="music-btn" type="button" class="inline-flex items-center gap-2 border-2 border-[#1DB954] text-[#1DB954] hover:bg-[#1DB954] hover:text-black font-display font-bold text-base sm:text-lg px-3 py-1.5 sm:py-2 uppercase tracking-wider transition-colors" aria-expanded="false" aria-controls="music-panel">
           <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-          <span>Música</span>
+          <span data-texto="encabezado.boton_musica">Música</span>
         </button>
-        <a href="https://wa.me/5491159758218?text=Hola%20Retro%20Green!%20Quiero%20reservar%20un%20turno" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex lg:hidden xl:inline-flex items-center gap-2 bg-brandGreen hover:bg-brandGreenLight text-black font-display font-bold text-lg px-6 py-2.5 uppercase tracking-wider transition-all duration-200 transform hover:-translate-y-0.5 shadow-neon-green active:translate-y-0">
-          <span>⚡</span> RESERVAR TURNO
+        <a data-wa href="https://wa.me/5491159758218?text=Hola%20Retro%20Green!%20Quiero%20reservar%20un%20turno" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex lg:hidden xl:inline-flex items-center gap-2 bg-brandGreen hover:bg-brandGreenLight text-black font-display font-bold text-lg px-6 py-2.5 uppercase tracking-wider transition-all duration-200 transform hover:-translate-y-0.5 shadow-neon-green active:translate-y-0">
+          <span>⚡</span> <span data-texto="encabezado.boton_reservar">RESERVAR TURNO</span>
         </a>
 
         <!-- Mobile Menu Hamburger Button -->
@@ -199,12 +200,12 @@
     <!-- MOBILE DROPDOWN MENU -->
     <div id="mobile-menu" class="hidden lg:hidden bg-brandCharcoal border-b border-brandGreen/40 px-6 py-6 transition-all">
       <div class="flex flex-col gap-4 font-display text-xl tracking-wider uppercase">
-        <a href="#hero" class="mobile-nav-link text-white hover:text-brandGreen py-2 border-b border-brandBorder">INICIO</a>
-        <a href="#servicios" class="mobile-nav-link text-white hover:text-brandGreen py-2 border-b border-brandBorder">SERVICIOS</a>
-        <a href="#nosotros" class="mobile-nav-link text-white hover:text-brandGreen py-2 border-b border-brandBorder">NOSOTROS</a>
-        <a href="#galeria" class="mobile-nav-link text-white hover:text-brandGreen py-2 border-b border-brandBorder">GALERÍA</a>
-        <a href="#contacto" class="mobile-nav-link text-white hover:text-brandGreen py-2 border-b border-brandBorder">CONTACTO</a>
-        <a href="https://wa.me/5491159758218?text=Hola%20Retro%20Green!%20Quiero%20reservar%20un%20turno" target="_blank" rel="noopener noreferrer" class="mobile-nav-link mt-2 text-center bg-brandGreen text-black font-bold py-3 uppercase tracking-wider shadow-neon-green">
+        <a href="#hero" class="mobile-nav-link text-white hover:text-brandGreen py-2 border-b border-brandBorder" data-texto="encabezado.nav_inicio">INICIO</a>
+        <a href="#servicios" class="mobile-nav-link text-white hover:text-brandGreen py-2 border-b border-brandBorder" data-texto="encabezado.nav_servicios">SERVICIOS</a>
+        <a href="#nosotros" class="mobile-nav-link text-white hover:text-brandGreen py-2 border-b border-brandBorder" data-texto="encabezado.nav_nosotros">NOSOTROS</a>
+        <a href="#galeria" class="mobile-nav-link text-white hover:text-brandGreen py-2 border-b border-brandBorder" data-texto="encabezado.nav_galeria">GALERÍA</a>
+        <a href="#contacto" class="mobile-nav-link text-white hover:text-brandGreen py-2 border-b border-brandBorder" data-texto="encabezado.nav_contacto">CONTACTO</a>
+        <a data-wa href="https://wa.me/5491159758218?text=Hola%20Retro%20Green!%20Quiero%20reservar%20un%20turno" target="_blank" rel="noopener noreferrer" class="mobile-nav-link mt-2 text-center bg-brandGreen text-black font-bold py-3 uppercase tracking-wider shadow-neon-green" data-texto="encabezado.mobile_reservar">
           RESERVAR TURNO POR WHATSAPP
         </a>
       </div>
@@ -214,12 +215,12 @@
     <div id="music-panel" class="hidden border-b border-[#1DB954]/50 bg-brandCharcoal">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 grid gap-4 md:grid-cols-[1fr_auto] md:items-center md:gap-8">
         <div>
-          <span class="font-mono text-xs font-bold uppercase tracking-widest text-[#1DB954]">// Lo que suena en el salón</span>
+          <span class="font-mono text-xs font-bold uppercase tracking-widest text-[#1DB954]" data-texto="encabezado.musica_titulo">// Lo que suena en el salón</span>
           <div id="music-embed" class="mt-3 min-h-[152px] bg-black/40"></div>
         </div>
         <a href="https://open.spotify.com/playlist/3AdBa8WRm8XeYURa0OHXkj" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-[#1DB954] hover:bg-[#1ed760] text-black font-display font-bold text-lg uppercase tracking-wider px-6 py-3 transition-colors">
           <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-          Escuchar en Spotify
+          <span data-texto="encabezado.musica_boton">Escuchar en Spotify</span>
         </a>
       </div>
     </div>
@@ -240,10 +241,10 @@
 
     <!-- Decorative stickers & badges in hero background -->
     <div class="absolute top-24 right-12 hidden lg:flex flex-col items-center gap-3 z-10 select-none">
-      <div class="sticker-rock bg-black border-2 border-brandViolet text-brandViolet font-mono text-xs font-bold px-3 py-1 shadow-neon-violet">
+      <div class="sticker-rock bg-black border-2 border-brandViolet text-brandViolet font-mono text-xs font-bold px-3 py-1 shadow-neon-violet" data-texto="hero.sticker_1">
         ⚡ CÓRDOBA · ARG
       </div>
-      <div class="sticker-rock rotate-3 bg-brandGreen text-black font-display font-bold text-sm px-4 py-1">
+      <div class="sticker-rock rotate-3 bg-brandGreen text-black font-display font-bold text-sm px-4 py-1" data-texto="hero.sticker_2">
         NO RULES · JUST STYLE
       </div>
     </div>
@@ -253,36 +254,36 @@
       <!-- SUBTITLE / TAG BADGE -->
       <div class="inline-flex items-center gap-2 border border-brandGreen/60 bg-black/80 px-4 py-1.5 mb-6 shadow-neon-green-sm reveal-on-scroll">
         <span class="text-brandGreen text-xs">★</span>
-        <span class="text-xs font-mono font-bold tracking-widest text-brandGreenLight uppercase">SALÓN · BARBERÍA · ROCK & ROLL</span>
+        <span class="text-xs font-mono font-bold tracking-widest text-brandGreenLight uppercase" data-texto="hero.insignia">SALÓN · BARBERÍA · ROCK & ROLL</span>
         <span class="text-brandGreen text-xs">★</span>
       </div>
 
       <!-- MAIN MASSIVE BRAND LOGO / HEADLINE -->
       <div class="mb-4 reveal-on-scroll">
-        <span class="font-script text-3xl sm:text-5xl md:text-6xl text-brandViolet neon-text-violet block -rotate-3 mb-1">
+        <span class="font-script text-3xl sm:text-5xl md:text-6xl text-brandViolet neon-text-violet block -rotate-3 mb-1" data-texto="marca.retro">
           Retro
         </span>
-        <h1 class="font-display text-6xl sm:text-8xl md:text-9xl font-black tracking-tight text-white uppercase leading-[0.88] select-none">
+        <h1 class="font-display text-6xl sm:text-8xl md:text-9xl font-black tracking-tight text-white uppercase leading-[0.88] select-none" data-texto="marca.green">
           GREEN
         </h1>
       </div>
 
       <!-- HEADLINE SLOGAN -->
       <div class="max-w-3xl mx-auto mb-8 reveal-on-scroll">
-        <h2 class="font-display text-2xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-wide text-brandGreenLight neon-text-green mb-4">
-          “TU ESTILO. TU LUGAR.”
+        <h2 class="font-display text-2xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-wide text-brandGreenLight neon-text-green mb-4" data-texto="hero.frase">
+          “DESBLOQUEANDO RECUERDOS”
         </h2>
-        <p class="text-base sm:text-xl text-brandMuted max-w-2xl mx-auto font-normal leading-relaxed">
+        <p class="text-base sm:text-xl text-brandMuted max-w-2xl mx-auto font-normal leading-relaxed" data-texto="hero.bajada">
           Cortes, barbería y una experiencia diferente en Córdoba.
         </p>
       </div>
 
       <!-- CTAS -->
       <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full sm:w-auto reveal-on-scroll">
-        <a href="https://wa.me/5491159758218?text=Hola%20Retro%20Green!%20Quiero%20reservar%20un%20turno" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex justify-center items-center gap-3 bg-brandGreen hover:bg-brandGreenLight text-black font-display font-extrabold text-xl px-9 py-4 tracking-wider uppercase shadow-neon-green transition-all transform hover:-translate-y-1 active:translate-y-0">
-          <span>⚡</span> RESERVAR TURNO
+        <a data-wa href="https://wa.me/5491159758218?text=Hola%20Retro%20Green!%20Quiero%20reservar%20un%20turno" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex justify-center items-center gap-3 bg-brandGreen hover:bg-brandGreenLight text-black font-display font-extrabold text-xl px-9 py-4 tracking-wider uppercase shadow-neon-green transition-all transform hover:-translate-y-1 active:translate-y-0">
+          <span>⚡</span> <span data-texto="encabezado.boton_reservar">RESERVAR TURNO</span>
         </a>
-        <a href="#servicios" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 border-2 border-white/80 hover:border-brandGreen hover:text-brandGreen bg-black/50 backdrop-blur-sm text-white font-display font-bold text-xl px-8 py-4 tracking-wider uppercase transition-all transform hover:-translate-y-0.5">
+        <a href="#servicios" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 border-2 border-white/80 hover:border-brandGreen hover:text-brandGreen bg-black/50 backdrop-blur-sm text-white font-display font-bold text-xl px-8 py-4 tracking-wider uppercase transition-all transform hover:-translate-y-0.5" data-texto="hero.boton_servicios">
           VER SERVICIOS
         </a>
       </div>
@@ -290,13 +291,13 @@
       <!-- ROCK DETAILS ICONS -->
       <div class="mt-14 pt-8 border-t border-white/10 w-full max-w-2xl flex items-center justify-around text-xs font-mono text-brandMuted reveal-on-scroll">
         <div class="flex items-center gap-2">
-          <span class="text-brandGreen font-bold">✓</span> 100% PERSONALIZADO
+          <span class="text-brandGreen font-bold">✓</span> <span data-texto="hero.dato_1">100% PERSONALIZADO</span>
         </div>
         <div class="flex items-center gap-2">
-          <span class="text-brandViolet font-bold">♫</span> ROCK SOUNDTRACK
+          <span class="text-brandViolet font-bold">♫</span> <span data-texto="hero.dato_2">ROCK SOUNDTRACK</span>
         </div>
         <div class="flex items-center gap-2">
-          <span class="text-brandGreen font-bold">☕</span> CAFÉ
+          <span class="text-brandGreen font-bold">☕</span> <span data-texto="hero.dato_3">CAFÉ</span>
         </div>
       </div>
 
@@ -317,24 +318,24 @@
           
           <div class="flex items-center gap-3 mb-4">
             <span class="w-8 h-[2px] bg-brandGreen"></span>
-            <span class="font-mono text-xs uppercase tracking-widest text-brandGreen font-bold">SOBRE EL SALÓN</span>
+            <span class="font-mono text-xs uppercase tracking-widest text-brandGreen font-bold" data-texto="nosotros.etiqueta">SOBRE EL SALÓN</span>
           </div>
 
           <h2 class="font-display text-4xl sm:text-6xl font-black uppercase tracking-tight text-white mb-6 leading-none">
-            MÁS QUE UNA <span class="text-brandGreen underline decoration-brandViolet decoration-4">PELUQUERÍA</span>
+            <span data-texto="nosotros.titulo">MÁS QUE UNA</span> <span class="text-brandGreen underline decoration-brandViolet decoration-4" data-texto="nosotros.titulo_verde">PELUQUERÍA</span>
           </h2>
 
-          <p class="text-lg sm:text-xl text-brandMuted font-normal leading-relaxed mb-8">
+          <p class="text-lg sm:text-xl text-brandMuted font-normal leading-relaxed mb-8" data-texto="nosotros.parrafo">
             Un espacio donde el estilo, la música y la cultura retro se encuentran. Cortes, barbería y una experiencia diferente en Córdoba.
           </p>
 
           <!-- DECORATIVE QUOTE / SLOGAN -->
           <div class="bg-brandCharcoal border-l-4 border-brandGreen p-6 mb-8 relative">
-            <span class="absolute -top-3 right-4 font-script text-brandViolet text-lg">Identity</span>
-            <p class="font-display text-2xl sm:text-3xl font-extrabold tracking-wider text-white uppercase mb-2">
+            <span class="absolute -top-3 right-4 font-script text-brandViolet text-lg" data-texto="nosotros.cita_sello">Identity</span>
+            <p class="font-display text-2xl sm:text-3xl font-extrabold tracking-wider text-white uppercase mb-2" data-texto="nosotros.cita_titulo">
               “CUT. ROCK. REPEAT.”
             </p>
-            <p class="text-sm text-brandMuted font-light">
+            <p class="text-sm text-brandMuted font-light" data-texto="nosotros.cita_texto">
               Acá no venís a esperar en silencio. Venís a escuchar vinilos clásicos, charlar de buena música y salir con el corte exacto que te representa.
             </p>
           </div>
@@ -343,19 +344,19 @@
           <div class="grid grid-cols-2 gap-4 text-sm font-mono text-white/90">
             <div class="flex items-center gap-3 p-3 bg-brandSurface border border-brandBorder">
               <span class="text-brandGreen text-lg">⚡</span>
-              <span>Barberos apasionados</span>
+              <span data-texto="nosotros.punto_1">Barberos apasionados</span>
             </div>
             <div class="flex items-center gap-3 p-3 bg-brandSurface border border-brandBorder">
               <span class="text-brandViolet text-lg">★</span>
-              <span>Ambiente 100% Rock</span>
+              <span data-texto="nosotros.punto_2">Ambiente 100% Rock</span>
             </div>
             <div class="flex items-center gap-3 p-3 bg-brandSurface border border-brandBorder">
               <span class="text-brandGreen text-lg">✂</span>
-              <span>Navajas y tijeras vintage</span>
+              <span data-texto="nosotros.punto_3">Navajas y tijeras vintage</span>
             </div>
             <div class="flex items-center gap-3 p-3 bg-brandSurface border border-brandBorder">
               <span class="text-brandViolet text-lg">●</span>
-              <span>Productos de primera línea</span>
+              <span data-texto="nosotros.punto_4">Productos de primera línea</span>
             </div>
           </div>
 
@@ -374,10 +375,10 @@
             <!-- Retro Tape badge -->
             <div class="absolute bottom-4 left-4 bg-black/90 border border-brandGreen px-4 py-2 text-xs font-mono font-bold text-white flex items-center gap-2">
               <span class="w-2 h-2 rounded-full bg-brandGreen animate-ping"></span>
-              RETRO GREEN CORNER · CÓRDOBA
+              <span data-texto="nosotros.foto_etiqueta">RETRO GREEN CORNER · CÓRDOBA</span>
             </div>
 
-            <div class="absolute -top-4 -right-4 bg-brandViolet text-black font-display font-black text-sm px-4 py-1.5 transform rotate-6 shadow-neon-violet uppercase">
+            <div class="absolute -top-4 -right-4 bg-brandViolet text-black font-display font-black text-sm px-4 py-1.5 transform rotate-6 shadow-neon-violet uppercase" data-texto="nosotros.foto_sticker">
               70s · 80s · 90s
             </div>
           </div>
@@ -397,13 +398,13 @@
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-brandBorder reveal-on-scroll">
         <div>
           <div class="flex items-center gap-2 text-brandGreen font-mono text-xs uppercase tracking-widest font-bold mb-2">
-            <span>//</span> CARTA DE SERVICIOS
+            <span>//</span> <span data-texto="servicios.etiqueta">CARTA DE SERVICIOS</span>
           </div>
           <h2 class="font-display text-4xl sm:text-6xl font-black uppercase tracking-tight text-white">
-            NUESTROS <span class="text-brandGreen">SERVICIOS</span>
+            <span data-texto="servicios.titulo">NUESTROS</span> <span class="text-brandGreen" data-texto="servicios.titulo_verde">SERVICIOS</span>
           </h2>
         </div>
-        <p class="text-brandMuted font-mono text-sm mt-4 md:mt-0 max-w-md">
+        <p class="text-brandMuted font-mono text-sm mt-4 md:mt-0 max-w-md" data-texto="servicios.bajada">
           Para hombres y mujeres: atención personalizada, asesoramiento de imagen según tu estilo y las mejores técnicas clásicas y contemporáneas.
         </p>
       </div>
@@ -416,19 +417,19 @@
           <div class="absolute top-0 right-0 w-16 h-16 bg-brandGreen/10 group-hover:bg-brandGreen/25 transition-colors -mr-8 -mt-8 rotate-45 pointer-events-none"></div>
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="font-mono text-xs font-bold text-brandGreen tracking-widest uppercase">01 / Masculino & femenino</span>
+              <span class="font-mono text-xs font-bold text-brandGreen tracking-widest uppercase" data-texto="servicios.s1_numero">01 / Masculino & femenino</span>
               <span class="text-2xl text-white group-hover:text-brandGreen transition-colors">✂</span>
             </div>
-            <h3 class="font-display text-3xl font-black uppercase tracking-wider text-white group-hover:text-brandGreen transition-colors mb-3">
+            <h3 class="font-display text-3xl font-black uppercase tracking-wider text-white group-hover:text-brandGreen transition-colors mb-3" data-texto="servicios.s1_titulo">
               CORTE
             </h3>
-            <p class="text-brandMuted text-sm leading-relaxed mb-6">
+            <p class="text-brandMuted text-sm leading-relaxed mb-6" data-texto="servicios.s1_texto">
               Cortes masculinos y femeninos, personalizados y con asesoramiento para encontrar el que va con vos.
             </p>
           </div>
           <div class="pt-6 border-t border-brandBorder/80 flex items-center justify-between">
-            <span class="text-xs font-mono text-brandGreen tracking-widest uppercase font-semibold">Tijera & Máquina</span>
-            <a href="https://wa.me/5491159758218?text=Hola%20Retro%20Green!%20Quiero%20reservar%20un%20turno%20para%20corte" target="_blank" rel="noopener noreferrer" class="text-xs font-display font-bold uppercase text-white hover:text-brandGreen underline tracking-wider">Reservar →</a>
+            <span class="text-xs font-mono text-brandGreen tracking-widest uppercase font-semibold" data-texto="servicios.s1_pie">Tijera & Máquina</span>
+            <a data-wa href="https://wa.me/5491159758218?text=Hola%20Retro%20Green!%20Quiero%20reservar%20un%20turno%20para%20corte" target="_blank" rel="noopener noreferrer" class="text-xs font-display font-bold uppercase text-white hover:text-brandGreen underline tracking-wider" data-texto="servicios.enlace_reservar">Reservar →</a>
           </div>
         </div>
 
@@ -437,43 +438,43 @@
           <div class="absolute top-0 right-0 w-16 h-16 bg-brandGreen/10 group-hover:bg-brandGreen/25 transition-colors -mr-8 -mt-8 rotate-45 pointer-events-none"></div>
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="font-mono text-xs font-bold text-brandGreen tracking-widest uppercase">02 / TRADICIÓN</span>
+              <span class="font-mono text-xs font-bold text-brandGreen tracking-widest uppercase" data-texto="servicios.s2_numero">02 / TRADICIÓN</span>
               <span class="text-2xl text-white group-hover:text-brandGreen transition-colors">🪒</span>
             </div>
-            <h3 class="font-display text-3xl font-black uppercase tracking-wider text-white group-hover:text-brandGreen transition-colors mb-3">
+            <h3 class="font-display text-3xl font-black uppercase tracking-wider text-white group-hover:text-brandGreen transition-colors mb-3" data-texto="servicios.s2_titulo">
               BARBERÍA
             </h3>
-            <p class="text-brandMuted text-sm leading-relaxed mb-6">
+            <p class="text-brandMuted text-sm leading-relaxed mb-6" data-texto="servicios.s2_texto">
               Barba, perfilado y afeitado.
             </p>
           </div>
           <div class="pt-6 border-t border-brandBorder/80 flex items-center justify-between">
-            <span class="text-xs font-mono text-brandGreen tracking-widest uppercase font-semibold">Toalla caliente</span>
-            <a href="https://wa.me/5491159758218?text=Hola%20Retro%20Green!%20Quiero%20reservar%20un%20turno%20para%20barber%C3%ADa" target="_blank" rel="noopener noreferrer" class="text-xs font-display font-bold uppercase text-white hover:text-brandGreen underline tracking-wider">Reservar →</a>
+            <span class="text-xs font-mono text-brandGreen tracking-widest uppercase font-semibold" data-texto="servicios.s2_pie">Toalla caliente</span>
+            <a data-wa href="https://wa.me/5491159758218?text=Hola%20Retro%20Green!%20Quiero%20reservar%20un%20turno%20para%20barber%C3%ADa" target="_blank" rel="noopener noreferrer" class="text-xs font-display font-bold uppercase text-white hover:text-brandGreen underline tracking-wider" data-texto="servicios.enlace_reservar">Reservar →</a>
           </div>
         </div>
 
         <!-- SERVICE 3: CORTE + BARBA -->
         <div class="bg-brandDark border-2 border-brandGreen p-8 flex flex-col justify-between transition-all duration-300 group hover:-translate-y-1 shadow-neon-green-sm relative overflow-hidden reveal-on-scroll" style="transition-delay: 0.2s;">
           <!-- Special Badge -->
-          <div class="absolute -top-1 -right-1 bg-brandViolet text-black font-display font-black text-[11px] px-3 py-1 uppercase tracking-wider">
+          <div class="absolute -top-1 -right-1 bg-brandViolet text-black font-display font-black text-[11px] px-3 py-1 uppercase tracking-wider" data-texto="servicios.s3_insignia">
             Recomendado
           </div>
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="font-mono text-xs font-bold text-brandGreenLight tracking-widest uppercase">03 / FULL VIBE</span>
+              <span class="font-mono text-xs font-bold text-brandGreenLight tracking-widest uppercase" data-texto="servicios.s3_numero">03 / FULL VIBE</span>
               <span class="text-2xl text-brandGreen">⚡</span>
             </div>
-            <h3 class="font-display text-3xl font-black uppercase tracking-wider text-white group-hover:text-brandGreen transition-colors mb-3">
+            <h3 class="font-display text-3xl font-black uppercase tracking-wider text-white group-hover:text-brandGreen transition-colors mb-3" data-texto="servicios.s3_titulo">
               CORTE + BARBA
             </h3>
-            <p class="text-brandMuted text-sm leading-relaxed mb-6">
+            <p class="text-brandMuted text-sm leading-relaxed mb-6" data-texto="servicios.s3_texto">
               El combo completo.
             </p>
           </div>
           <div class="pt-6 border-t border-brandBorder/80 flex items-center justify-between">
-            <span class="text-xs font-mono text-brandGreenLight tracking-widest uppercase font-semibold">Servicio Integral</span>
-            <a href="https://wa.me/5491159758218?text=Hola%20Retro%20Green!%20Quiero%20reservar%20un%20turno%20para%20corte%20y%20barba" target="_blank" rel="noopener noreferrer" class="text-xs font-display font-bold uppercase text-brandGreen hover:underline tracking-wider">Reservar →</a>
+            <span class="text-xs font-mono text-brandGreenLight tracking-widest uppercase font-semibold" data-texto="servicios.s3_pie">Servicio Integral</span>
+            <a data-wa href="https://wa.me/5491159758218?text=Hola%20Retro%20Green!%20Quiero%20reservar%20un%20turno%20para%20corte%20y%20barba" target="_blank" rel="noopener noreferrer" class="text-xs font-display font-bold uppercase text-brandGreen hover:underline tracking-wider" data-texto="servicios.enlace_reservar">Reservar →</a>
           </div>
         </div>
 
@@ -482,19 +483,19 @@
           <div class="absolute top-0 right-0 w-16 h-16 bg-brandViolet/15 group-hover:bg-brandViolet/30 transition-colors -mr-8 -mt-8 rotate-45 pointer-events-none"></div>
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="font-mono text-xs font-bold text-brandViolet tracking-widest uppercase">04 / CREATIVIDAD</span>
+              <span class="font-mono text-xs font-bold text-brandViolet tracking-widest uppercase" data-texto="servicios.s4_numero">04 / CREATIVIDAD</span>
               <span class="text-2xl text-brandViolet">★</span>
             </div>
-            <h3 class="font-display text-3xl font-black uppercase tracking-wider text-white group-hover:text-brandGreen transition-colors mb-3">
+            <h3 class="font-display text-3xl font-black uppercase tracking-wider text-white group-hover:text-brandGreen transition-colors mb-3" data-texto="servicios.s4_titulo">
               COLOR
             </h3>
-            <p class="text-brandMuted text-sm leading-relaxed mb-6">
+            <p class="text-brandMuted text-sm leading-relaxed mb-6" data-texto="servicios.s4_texto">
               Color y tinturas para quienes quieren un cambio o algo diferente.
             </p>
           </div>
           <div class="pt-6 border-t border-brandBorder/80 flex items-center justify-between">
-            <span class="text-xs font-mono text-brandViolet tracking-widest uppercase font-semibold">Diseño & Actitud</span>
-            <a href="https://wa.me/5491159758218?text=Hola%20Retro%20Green!%20Quiero%20reservar%20un%20turno%20para%20color" target="_blank" rel="noopener noreferrer" class="text-xs font-display font-bold uppercase text-white hover:text-brandGreen underline tracking-wider">Reservar →</a>
+            <span class="text-xs font-mono text-brandViolet tracking-widest uppercase font-semibold" data-texto="servicios.s4_pie">Diseño & Actitud</span>
+            <a data-wa href="https://wa.me/5491159758218?text=Hola%20Retro%20Green!%20Quiero%20reservar%20un%20turno%20para%20color" target="_blank" rel="noopener noreferrer" class="text-xs font-display font-bold uppercase text-white hover:text-brandGreen underline tracking-wider" data-texto="servicios.enlace_reservar">Reservar →</a>
           </div>
         </div>
 
@@ -503,42 +504,42 @@
           <div class="absolute top-0 right-0 w-16 h-16 bg-brandGreen/10 group-hover:bg-brandGreen/25 transition-colors -mr-8 -mt-8 rotate-45 pointer-events-none"></div>
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="font-mono text-xs font-bold text-brandGreen tracking-widest uppercase">05 / CUIDADO</span>
+              <span class="font-mono text-xs font-bold text-brandGreen tracking-widest uppercase" data-texto="servicios.s5_numero">05 / CUIDADO</span>
               <span class="text-2xl">💧</span>
             </div>
-            <h3 class="font-display text-3xl font-black uppercase tracking-wider text-white group-hover:text-brandGreen transition-colors mb-3">
+            <h3 class="font-display text-3xl font-black uppercase tracking-wider text-white group-hover:text-brandGreen transition-colors mb-3" data-texto="servicios.s5_titulo">
               NUTRICIÓN
             </h3>
-            <p class="text-brandMuted text-sm leading-relaxed mb-6">
+            <p class="text-brandMuted text-sm leading-relaxed mb-6" data-texto="servicios.s5_texto">
               Tratamientos de nutrición para un pelo sano, fuerte y con brillo.
             </p>
           </div>
           <div class="pt-6 border-t border-brandBorder/80 flex items-center justify-between">
-            <span class="text-xs font-mono text-brandGreen tracking-widest uppercase font-semibold">Pelo sano</span>
-            <a href="https://wa.me/5491159758218?text=Hola%20Retro%20Green!%20Quiero%20reservar%20un%20turno%20para%20nutrici%C3%B3n" target="_blank" rel="noopener noreferrer" class="text-xs font-display font-bold uppercase text-white hover:text-brandGreen underline tracking-wider">Reservar →</a>
+            <span class="text-xs font-mono text-brandGreen tracking-widest uppercase font-semibold" data-texto="servicios.s5_pie">Pelo sano</span>
+            <a data-wa href="https://wa.me/5491159758218?text=Hola%20Retro%20Green!%20Quiero%20reservar%20un%20turno%20para%20nutrici%C3%B3n" target="_blank" rel="noopener noreferrer" class="text-xs font-display font-bold uppercase text-white hover:text-brandGreen underline tracking-wider" data-texto="servicios.enlace_reservar">Reservar →</a>
           </div>
         </div>
 
         <!-- SERVICE 6: PRODUCTOS A LA VENTA -->
         <div class="bg-brandDark border-2 border-brandBorder hover:border-brandViolet p-8 flex flex-col justify-between transition-all duration-300 group hover:-translate-y-1 shadow-card-dark relative overflow-hidden reveal-on-scroll" style="transition-delay: 0.2s;">
-          <div class="absolute -top-1 -right-1 bg-brandGreen text-black font-display font-black text-[11px] px-3 py-1 uppercase tracking-wider">
+          <div class="absolute -top-1 -right-1 bg-brandGreen text-black font-display font-black text-[11px] px-3 py-1 uppercase tracking-wider" data-texto="servicios.s6_insignia">
             Tienda
           </div>
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="font-mono text-xs font-bold text-brandViolet tracking-widest uppercase">06 / Para llevar</span>
+              <span class="font-mono text-xs font-bold text-brandViolet tracking-widest uppercase" data-texto="servicios.s6_numero">06 / Para llevar</span>
               <span class="text-2xl">🧴</span>
             </div>
-            <h3 class="font-display text-3xl font-black uppercase tracking-wider text-white group-hover:text-brandViolet transition-colors mb-3">
+            <h3 class="font-display text-3xl font-black uppercase tracking-wider text-white group-hover:text-brandViolet transition-colors mb-3" data-texto="servicios.s6_titulo">
               PRODUCTOS
             </h3>
-            <p class="text-brandMuted text-sm leading-relaxed mb-6">
+            <p class="text-brandMuted text-sm leading-relaxed mb-6" data-texto="servicios.s6_texto">
               Venta de perfumes, nutriciones y ceras para que sigas cuidando tu estilo en casa.
             </p>
           </div>
           <div class="pt-6 border-t border-brandBorder/80 flex items-center justify-between">
-            <span class="text-xs font-mono text-brandViolet tracking-widest uppercase font-semibold">Perfumes · Ceras</span>
-            <a href="https://wa.me/5491159758218?text=Hola%20Retro%20Green!%20Quiero%20consultar%20por%20perfumes%2C%20nutriciones%20y%20ceras" target="_blank" rel="noopener noreferrer" class="text-xs font-display font-bold uppercase text-white hover:text-brandViolet underline tracking-wider">Consultar →</a>
+            <span class="text-xs font-mono text-brandViolet tracking-widest uppercase font-semibold" data-texto="servicios.s6_pie">Perfumes · Ceras</span>
+            <a data-wa href="https://wa.me/5491159758218?text=Hola%20Retro%20Green!%20Quiero%20consultar%20por%20perfumes%2C%20nutriciones%20y%20ceras" target="_blank" rel="noopener noreferrer" class="text-xs font-display font-bold uppercase text-white hover:text-brandViolet underline tracking-wider" data-texto="servicios.enlace_consultar">Consultar →</a>
           </div>
         </div>
 
@@ -547,15 +548,15 @@
       <!-- Detail tools callout -->
       <div class="mt-12 p-6 bg-brandSurface border border-brandBorder flex flex-col sm:flex-row items-center justify-between gap-4">
         <div class="flex items-center gap-4">
-          <div class="w-12 h-12 bg-black border border-brandGreen flex items-center justify-center text-brandGreen font-display font-bold text-xl">
+          <div class="w-12 h-12 bg-black border border-brandGreen flex items-center justify-center text-brandGreen font-display font-bold text-xl" data-texto="marca.iniciales">
             RG
           </div>
           <div>
-            <h4 class="font-display text-lg uppercase tracking-wider text-white">¿Tenés una idea particular para tu pelo o barba?</h4>
-            <p class="text-xs font-mono text-brandMuted">Traé tu referencia o charlalo directamente en la silla con nuestros profesionales.</p>
+            <h4 class="font-display text-lg uppercase tracking-wider text-white" data-texto="servicios.consulta_titulo">¿Tenés una idea particular para tu pelo o barba?</h4>
+            <p class="text-xs font-mono text-brandMuted" data-texto="servicios.consulta_texto">Traé tu referencia o charlalo directamente en la silla con nuestros profesionales.</p>
           </div>
         </div>
-        <a href="https://wa.me/5491159758218?text=Hola%20Retro%20Green!%20Tengo%20una%20consulta%20sobre%20mi%20pelo%20o%20barba" target="_blank" rel="noopener noreferrer" class="whitespace-nowrap px-6 py-2.5 bg-brandCharcoal hover:bg-brandGreen hover:text-black border border-brandGreen font-display font-bold text-sm tracking-wider uppercase transition-colors">
+        <a data-wa href="https://wa.me/5491159758218?text=Hola%20Retro%20Green!%20Tengo%20una%20consulta%20sobre%20mi%20pelo%20o%20barba" target="_blank" rel="noopener noreferrer" class="whitespace-nowrap px-6 py-2.5 bg-brandCharcoal hover:bg-brandGreen hover:text-black border border-brandGreen font-display font-bold text-sm tracking-wider uppercase transition-colors" data-texto="servicios.consulta_boton">
           CONSULTAR POR WHATSAPP
         </a>
       </div>
@@ -570,27 +571,27 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
 
         <div class="lg:col-span-5 reveal-on-scroll">
-          <span class="font-script text-2xl sm:text-3xl text-brandViolet neon-text-violet block mb-3 -rotate-2">Nuestra historia</span>
+          <span class="font-script text-2xl sm:text-3xl text-brandViolet neon-text-violet block mb-3 -rotate-2" data-texto="historia.sello">Nuestra historia</span>
           <h2 class="font-display text-5xl sm:text-7xl font-black uppercase tracking-tight text-white leading-[0.95]">
-            UN LUGAR CON <span class="text-brandGreen neon-text-green">IDENTIDAD PROPIA</span>
+            <span data-texto="historia.titulo">UN LUGAR CON</span> <span class="text-brandGreen neon-text-green" data-texto="historia.titulo_verde">IDENTIDAD PROPIA</span>
           </h2>
-          <div class="sticker-rock inline-block mt-8 bg-brandGreen text-black font-display font-black text-xl sm:text-2xl px-5 py-2 uppercase tracking-wider shadow-neon-green">
+          <div class="sticker-rock inline-block mt-8 bg-brandGreen text-black font-display font-black text-xl sm:text-2xl px-5 py-2 uppercase tracking-wider shadow-neon-green" data-texto="historia.insignia">
             ★ Desde 2018
           </div>
         </div>
 
         <div class="lg:col-span-7 space-y-6 reveal-on-scroll" style="transition-delay: 0.1s;">
-          <p class="text-lg sm:text-xl text-white/90 leading-relaxed">
+          <p class="text-lg sm:text-xl text-white/90 leading-relaxed" data-texto="historia.parrafo_1">
             Retro Green nació en 2018 con una idea clara: ser un lugar distinto. No vinimos a copiar lo que hacen todos ni a prometer que somos los mejores. Vinimos a ser auténticos.
           </p>
-          <p class="text-base text-brandMuted leading-relaxed">
+          <p class="text-base text-brandMuted leading-relaxed" data-texto="historia.parrafo_2">
             Cada corte, cada charla y cada canción que suena en el salón lleva nuestra impronta. Las paredes llenas de afiches, la música de fondo y el trato cercano hacen que venir acá sea una experiencia que no vas a encontrar en otro lado.
           </p>
           <blockquote class="bg-brandCharcoal border-l-4 border-brandViolet p-6">
-            <p class="font-display text-2xl sm:text-3xl font-extrabold uppercase tracking-wider text-white">
+            <p class="font-display text-2xl sm:text-3xl font-extrabold uppercase tracking-wider text-white" data-texto="historia.cita">
               “No buscamos ser uno más. Buscamos ser auténticos.”
             </p>
-            <footer class="mt-2 text-xs font-mono uppercase tracking-widest text-brandGreen">Retro Green Salón</footer>
+            <footer class="mt-2 text-xs font-mono uppercase tracking-widest text-brandGreen" data-texto="historia.cita_autor">Retro Green Salón</footer>
           </blockquote>
         </div>
 
@@ -607,17 +608,17 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
       <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
-        <span class="font-script text-2xl text-brandViolet neon-text-violet block mb-2">
+        <span class="font-script text-2xl text-brandViolet neon-text-violet block mb-2" data-texto="experiencia.sello">
           La Experiencia
         </span>
         <h2 class="font-display text-5xl sm:text-7xl md:text-8xl font-black uppercase tracking-tight text-white leading-none mb-6">
-          “NO ES SOLO <br class="hidden sm:block" /><span class="text-brandGreen neon-text-green">UN CORTE.”</span>
+          <span data-texto="experiencia.titulo">“NO ES SOLO</span> <br class="hidden sm:block" /><span class="text-brandGreen neon-text-green" data-texto="experiencia.titulo_verde">UN CORTE.”</span>
         </h2>
-        <p class="text-lg sm:text-2xl text-brandMuted font-light leading-relaxed mb-6">
+        <p class="text-lg sm:text-2xl text-brandMuted font-light leading-relaxed mb-6" data-texto="experiencia.bajada">
           “Es música, estética, conversación, máquinas, luces, posters y un lugar donde podés sentirte vos mismo.”
         </p>
         <div class="inline-block bg-brandCharcoal border border-brandViolet/60 px-6 py-2">
-          <span class="font-display text-2xl tracking-widest text-brandViolet font-extrabold uppercase">
+          <span class="font-display text-2xl tracking-widest text-brandViolet font-extrabold uppercase" data-texto="experiencia.lema">
             CUT. ROCK. REPEAT.
           </span>
         </div>
@@ -629,13 +630,13 @@
         <!-- Left Feature Card -->
         <div class="bg-brandCharcoal border border-brandBorder p-8 relative hover:border-brandGreen transition-colors reveal-on-scroll">
           <div class="text-brandGreen text-3xl font-display font-black mb-2">01</div>
-          <h3 class="font-display text-2xl font-bold uppercase tracking-wider text-white mb-2">MÚSICA & CULTURA</h3>
-          <p class="text-brandMuted text-sm font-light leading-relaxed">
+          <h3 class="font-display text-2xl font-bold uppercase tracking-wider text-white mb-2" data-texto="experiencia.card1_titulo">MÚSICA & CULTURA</h3>
+          <p class="text-brandMuted text-sm font-light leading-relaxed" data-texto="experiencia.card1_texto">
             De The Clash a Pappo, pasando por Motörhead y Sumo. Vinilos sonando en vivo, stickers en cada rincón y la esencia más pura del rock.
           </p>
           <a href="https://open.spotify.com/playlist/3AdBa8WRm8XeYURa0OHXkj" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#1DB954] hover:underline">
             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-            Escuchá la playlist en Spotify →
+            <span data-texto="experiencia.card1_enlace">Escuchá la playlist en Spotify →</span>
           </a>
         </div>
 
@@ -645,7 +646,7 @@
           <div class="relative bg-black border-2 border-white/40 overflow-hidden shadow-2xl">
             <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCI68CjUJQWZwOiLyIcdEYRHmKGVXfBJ_XyR6NwBjsbaNaiRYbbzKfWrMcmJZSdgFEr9SUpwpL2di5u-A3OCLkS_RKnQjToFpfdWDqO5c9M_dUOelSVva6u7J17LASidp7DW8s4mcOy0nOeM8d4XY6wvvFFextAc27VbBZR4cPDXyadhWfEkPD3zsoV9ZKKwBrau7VNkUSvqF8urt4dvff0DdAGDb25UUq_ea__Px5HdIlKYXjqrw6RtQ" alt="Máquina de corte y tijeras en Retro Green Salón" data-foto="herramientas" class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-500" />
             <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black via-black/70 to-transparent p-4">
-              <span class="font-mono text-xs text-brandGreenLight font-bold uppercase">HERRAMIENTAS DE PRECISIÓN</span>
+              <span class="font-mono text-xs text-brandGreenLight font-bold uppercase" data-texto="experiencia.foto_pie">HERRAMIENTAS DE PRECISIÓN</span>
             </div>
           </div>
         </div>
@@ -653,8 +654,8 @@
         <!-- Right Feature Card -->
         <div class="bg-brandCharcoal border border-brandBorder p-8 relative hover:border-brandGreen transition-colors reveal-on-scroll">
           <div class="text-brandViolet text-3xl font-display font-black mb-2">02</div>
-          <h3 class="font-display text-2xl font-bold uppercase tracking-wider text-white mb-2">TRATO AUTÉNTICO</h3>
-          <p class="text-brandMuted text-sm font-light leading-relaxed">
+          <h3 class="font-display text-2xl font-bold uppercase tracking-wider text-white mb-2" data-texto="experiencia.card2_titulo">TRATO AUTÉNTICO</h3>
+          <p class="text-brandMuted text-sm font-light leading-relaxed" data-texto="experiencia.card2_texto">
             Acá no hay formalismos acartonados ni protocolos rígidos. Te sentás, te relajás, compartimos buena charla y nos ocupamos de tu imagen.
           </p>
         </div>
@@ -671,13 +672,13 @@
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14 reveal-on-scroll">
         <div>
           <div class="flex items-center gap-2 text-brandGreen font-mono text-xs uppercase tracking-widest font-bold mb-2">
-            <span>//</span> MIENTRAS ESPERÁS
+            <span>//</span> <span data-texto="clasicos.etiqueta">MIENTRAS ESPERÁS</span>
           </div>
           <h2 class="font-display text-4xl sm:text-6xl font-black uppercase tracking-tight text-white">
-            JUEGOS Y PELÍCULAS <span class="text-brandGreen">CLÁSICAS</span>
+            <span data-texto="clasicos.titulo">JUEGOS Y PELÍCULAS</span> <span class="text-brandGreen" data-texto="clasicos.titulo_verde">CLÁSICAS</span>
           </h2>
         </div>
-        <p class="text-brandMuted font-mono text-sm max-w-md">
+        <p class="text-brandMuted font-mono text-sm max-w-md" data-texto="clasicos.bajada">
           Tu turno no es una sala de espera: tomate un café y jugá unos fichines.
         </p>
       </div>
@@ -691,9 +692,9 @@
             <figcaption class="missing-note">Falta la imagen: guardala como img/arcade.webp</figcaption>
           </figure>
           <div class="mt-8">
-            <span class="font-mono text-xs font-bold text-brandViolet tracking-widest uppercase">// Fichines</span>
-            <h3 class="font-display text-3xl font-black uppercase tracking-wider text-white mt-1 mb-2">JUEGOS CLÁSICOS</h3>
-            <p class="text-brandMuted text-sm leading-relaxed max-w-md">
+            <span class="font-mono text-xs font-bold text-brandViolet tracking-widest uppercase" data-texto="clasicos.juegos_etiqueta">// Fichines</span>
+            <h3 class="font-display text-3xl font-black uppercase tracking-wider text-white mt-1 mb-2" data-texto="clasicos.juegos_titulo">JUEGOS CLÁSICOS</h3>
+            <p class="text-brandMuted text-sm leading-relaxed max-w-md" data-texto="clasicos.juegos_texto">
               Una máquina arcade con los juegos de siempre para jugar una partida mientras esperás tu turno.
             </p>
           </div>
@@ -706,9 +707,9 @@
             <figcaption class="missing-note">Falta la imagen: guardala como img/peliculas.png</figcaption>
           </figure>
           <div class="mt-8">
-            <span class="font-mono text-xs font-bold text-brandGreen tracking-widest uppercase">// En las paredes</span>
-            <h3 class="font-display text-3xl font-black uppercase tracking-wider text-white mt-1 mb-2">PELÍCULAS CLÁSICAS</h3>
-            <p class="text-brandMuted text-sm leading-relaxed max-w-md">
+            <span class="font-mono text-xs font-bold text-brandGreen tracking-widest uppercase" data-texto="clasicos.pelis_etiqueta">// En las paredes</span>
+            <h3 class="font-display text-3xl font-black uppercase tracking-wider text-white mt-1 mb-2" data-texto="clasicos.pelis_titulo">PELÍCULAS CLÁSICAS</h3>
+            <p class="text-brandMuted text-sm leading-relaxed max-w-md" data-texto="clasicos.pelis_texto">
               Afiches de películas de culto decorando el salón. Buscá tu favorita mientras esperás.
             </p>
           </div>
@@ -725,12 +726,12 @@
       <!-- HEADER -->
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 reveal-on-scroll">
         <div>
-          <span class="font-mono text-xs uppercase tracking-widest text-brandGreen font-bold">// ESPACIO & ATMÓSFERA</span>
+          <span class="font-mono text-xs uppercase tracking-widest text-brandGreen font-bold" data-texto="galeria.etiqueta">// ESPACIO & ATMÓSFERA</span>
           <h2 class="font-display text-4xl sm:text-6xl font-black uppercase tracking-tight text-white mt-1">
-            GALERÍA <span class="text-brandGreen">DEL SALÓN</span>
+            <span data-texto="galeria.titulo">GALERÍA</span> <span class="text-brandGreen" data-texto="galeria.titulo_verde">DEL SALÓN</span>
           </h2>
         </div>
-        <div class="mt-4 md:mt-0 font-mono text-xs text-brandMuted border border-brandBorder px-4 py-2 bg-brandCharcoal">
+        <div class="mt-4 md:mt-0 font-mono text-xs text-brandMuted border border-brandBorder px-4 py-2 bg-brandCharcoal" data-texto="galeria.insignia">
           ⚡ RETRO GREEN · CÓRDOBA · FOTOGRAFÍA REAL
         </div>
       </div>
@@ -792,7 +793,7 @@
 
       <!-- Instagram Callout -->
       <div class="mt-8 text-center">
-        <a href="https://www.instagram.com/retrogreen_salonn/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 text-sm font-mono tracking-wider text-brandMuted hover:text-brandGreen transition-colors border-b border-brandBorder pb-1">
+        <a data-ig href="https://www.instagram.com/retrogreen_salonn/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 text-sm font-mono tracking-wider text-brandMuted hover:text-brandGreen transition-colors border-b border-brandBorder pb-1">
           <span>📸</span> SEGUINOS EN INSTAGRAM PARA VER MÁS FOTOS Y TRABAJOS DIARIOS <span>→</span>
         </a>
       </div>
@@ -809,10 +810,10 @@
         <!-- Address & Details (5 cols) -->
         <div class="lg:col-span-5 reveal-on-scroll">
           <div class="flex items-center gap-2 text-brandGreen font-mono text-xs uppercase tracking-widest font-bold mb-2">
-            <span>//</span> UBICACIÓN
+            <span>//</span> <span data-texto="ubicacion.etiqueta">UBICACIÓN</span>
           </div>
           <h2 class="font-display text-4xl sm:text-6xl font-black uppercase tracking-tight text-white mb-6">
-            VENÍ A <span class="text-brandGreen">CONOCERNOS</span>
+            <span data-texto="ubicacion.titulo">VENÍ A</span> <span class="text-brandGreen" data-texto="ubicacion.titulo_verde">CONOCERNOS</span>
           </h2>
 
           <div class="bg-brandDark border-2 border-brandBorder p-6 sm:p-8 mb-8 shadow-card-dark">
@@ -821,18 +822,18 @@
                 📍
               </div>
               <div>
-                <span class="font-mono text-xs uppercase text-brandGreen font-bold tracking-wider">DIRECCIÓN</span>
-                <p class="font-display text-2xl sm:text-3xl font-black uppercase text-white mt-1">
+                <span class="font-mono text-xs uppercase text-brandGreen font-bold tracking-wider" data-texto="ubicacion.direccion_etiqueta">DIRECCIÓN</span>
+                <p class="font-display text-2xl sm:text-3xl font-black uppercase text-white mt-1" data-texto="ubicacion.direccion">
                   Av. Emilio Caraffa 2086
                 </p>
-                <p class="text-brandMuted text-base font-normal">
+                <p class="text-brandMuted text-base font-normal" data-texto="ubicacion.ciudad">
                   Córdoba, Argentina
                 </p>
               </div>
             </div>
 
             <div class="pt-6 border-t border-brandBorder space-y-3 font-mono text-xs text-brandMuted">
-              <span class="block text-white font-semibold">HORARIOS:</span>
+              <span class="block text-white font-semibold" data-texto="ubicacion.horarios_etiqueta">HORARIOS:</span>
               <!-- Replaced by datos/horarios.json when it loads -->
               <div id="horarios-lista" class="space-y-3">
                 <div class="flex justify-between items-center gap-4">
@@ -847,20 +848,20 @@
             </div>
 
             <div class="pt-6 mt-6 border-t border-brandBorder space-y-3 font-mono text-xs">
-              <a href="https://wa.me/5491159758218?text=Hola%20Retro%20Green!%20Quiero%20reservar%20un%20turno" target="_blank" rel="noopener noreferrer" class="flex justify-between items-center gap-4 group">
-                <span class="text-white font-semibold">WHATSAPP:</span>
-                <span class="text-brandGreenLight font-bold group-hover:underline">+54 9 11 5975-8218</span>
+              <a data-wa href="https://wa.me/5491159758218?text=Hola%20Retro%20Green!%20Quiero%20reservar%20un%20turno" target="_blank" rel="noopener noreferrer" class="flex justify-between items-center gap-4 group">
+                <span class="text-white font-semibold" data-texto="ubicacion.whatsapp_etiqueta">WHATSAPP:</span>
+                <span class="text-brandGreenLight font-bold group-hover:underline" data-texto="ubicacion.whatsapp_numero">+54 9 11 5975-8218</span>
               </a>
-              <a href="https://www.instagram.com/retrogreen_salonn/" target="_blank" rel="noopener noreferrer" class="flex justify-between items-center gap-4 group">
-                <span class="text-white font-semibold">INSTAGRAM:</span>
-                <span class="text-brandViolet font-bold group-hover:underline">@retrogreen_salonn</span>
+              <a data-ig href="https://www.instagram.com/retrogreen_salonn/" target="_blank" rel="noopener noreferrer" class="flex justify-between items-center gap-4 group">
+                <span class="text-white font-semibold" data-texto="ubicacion.instagram_etiqueta">INSTAGRAM:</span>
+                <span class="text-brandViolet font-bold group-hover:underline" data-texto="ubicacion.instagram_usuario">@retrogreen_salonn</span>
               </a>
             </div>
           </div>
 
           <!-- Direct Google Maps CTA -->
-          <a href="https://maps.google.com/?q=Av.+Emilio+Caraffa+2086+Cordoba+Argentina" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 w-full bg-transparent hover:bg-brandGreen hover:text-black border-2 border-brandGreen text-brandGreen font-display font-extrabold text-lg px-8 py-4 uppercase tracking-wider transition-all shadow-neon-green-sm">
-            <span>📍</span> CÓMO LLEGAR
+          <a data-maps href="https://maps.google.com/?q=Av.+Emilio+Caraffa+2086+Cordoba+Argentina" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 w-full bg-transparent hover:bg-brandGreen hover:text-black border-2 border-brandGreen text-brandGreen font-display font-extrabold text-lg px-8 py-4 uppercase tracking-wider transition-all shadow-neon-green-sm">
+            <span>📍</span> <span data-texto="ubicacion.boton_mapa">CÓMO LLEGAR</span>
           </a>
 
         </div>
@@ -895,20 +896,20 @@
 
               <!-- Central Pin Card -->
               <div class="relative z-10 bg-black/95 border-2 border-brandGreen p-6 shadow-neon-green text-center max-w-xs transform hover:scale-105 transition-transform">
-                <div class="w-12 h-12 bg-brandGreen text-black font-display font-black text-2xl flex items-center justify-center mx-auto mb-3">
+                <div class="w-12 h-12 bg-brandGreen text-black font-display font-black text-2xl flex items-center justify-center mx-auto mb-3" data-texto="marca.iniciales">
                   RG
                 </div>
-                <h4 class="font-display text-xl font-bold uppercase text-white">RETRO GREEN SALÓN</h4>
-                <p class="text-xs font-mono text-brandGreenLight mt-1">Av. Emilio Caraffa 2086</p>
-                <p class="text-[11px] text-brandMuted mt-0.5">Barrio Villa Cabrera · Córdoba</p>
+                <h4 class="font-display text-xl font-bold uppercase text-white" data-texto="ubicacion.mapa_nombre">RETRO GREEN SALÓN</h4>
+                <p class="text-xs font-mono text-brandGreenLight mt-1" data-texto="ubicacion.direccion">Av. Emilio Caraffa 2086</p>
+                <p class="text-[11px] text-brandMuted mt-0.5" data-texto="ubicacion.mapa_barrio">Barrio Villa Cabrera · Córdoba</p>
                 
-                <a href="https://maps.google.com/?q=Av.+Emilio+Caraffa+2086+Cordoba+Argentina" target="_blank" rel="noopener noreferrer" class="mt-4 inline-block bg-brandGreen hover:bg-brandGreenLight text-black font-display font-bold text-xs uppercase px-4 py-2 tracking-wider">
+                <a data-maps href="https://maps.google.com/?q=Av.+Emilio+Caraffa+2086+Cordoba+Argentina" target="_blank" rel="noopener noreferrer" class="mt-4 inline-block bg-brandGreen hover:bg-brandGreenLight text-black font-display font-bold text-xs uppercase px-4 py-2 tracking-wider" data-texto="ubicacion.mapa_boton">
                   ABRIR EN GOOGLE MAPS
                 </a>
               </div>
 
               <!-- Map Overlay Tag -->
-              <div class="absolute top-4 left-4 bg-black/80 border border-brandBorder px-3 py-1 font-mono text-[11px] text-brandMuted">
+              <div class="absolute top-4 left-4 bg-black/80 border border-brandBorder px-3 py-1 font-mono text-[11px] text-brandMuted" data-texto="ubicacion.mapa_etiqueta">
                 CÓRDOBA CAPITAL · ARGENTINA
               </div>
 
@@ -933,17 +934,17 @@
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 reveal-on-scroll">
       
       <!-- Mini rock badge -->
-      <div class="inline-flex items-center gap-2 border border-brandViolet text-brandViolet bg-black px-4 py-1 text-xs font-mono font-bold tracking-widest uppercase mb-6 shadow-neon-violet">
+      <div class="inline-flex items-center gap-2 border border-brandViolet text-brandViolet bg-black px-4 py-1 text-xs font-mono font-bold tracking-widest uppercase mb-6 shadow-neon-violet" data-texto="contacto.insignia">
         ⚡ AGENDÁ HOY MISMO
       </div>
 
       <!-- Main Headline -->
       <h2 class="font-display text-5xl sm:text-7xl md:text-8xl font-black uppercase tracking-tight text-white mb-6 leading-none">
-        ¿SACAMOS <span class="text-brandGreen neon-text-green">TURNO?</span>
+        <span data-texto="contacto.titulo">¿SACAMOS</span> <span class="text-brandGreen neon-text-green" data-texto="contacto.titulo_verde">TURNO?</span>
       </h2>
 
       <!-- Text -->
-      <p class="text-lg sm:text-2xl text-brandMuted max-w-2xl mx-auto font-normal leading-relaxed mb-12">
+      <p class="text-lg sm:text-2xl text-brandMuted max-w-2xl mx-auto font-normal leading-relaxed mb-12" data-texto="contacto.bajada">
         Reservá tu próximo corte y vení a vivir la experiencia Retro Green.
       </p>
 
@@ -951,25 +952,25 @@
       <div class="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-lg mx-auto">
         
         <!-- WhatsApp CTA -->
-        <a href="https://wa.me/5491159758218?text=Hola%20Retro%20Green!%20Quiero%20reservar%20un%20turno" target="_blank" rel="noopener noreferrer" class="w-full sm:w-1/2 inline-flex items-center justify-center gap-3 bg-brandGreen hover:bg-brandGreenLight text-black font-display font-black text-xl px-8 py-5 uppercase tracking-wider shadow-neon-green transition-all transform hover:-translate-y-1 active:translate-y-0">
+        <a data-wa href="https://wa.me/5491159758218?text=Hola%20Retro%20Green!%20Quiero%20reservar%20un%20turno" target="_blank" rel="noopener noreferrer" class="w-full sm:w-1/2 inline-flex items-center justify-center gap-3 bg-brandGreen hover:bg-brandGreenLight text-black font-display font-black text-xl px-8 py-5 uppercase tracking-wider shadow-neon-green transition-all transform hover:-translate-y-1 active:translate-y-0">
           <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
           </svg>
-          <span>WHATSAPP</span>
+          <span data-texto="contacto.boton_whatsapp">WHATSAPP</span>
         </a>
 
         <!-- Instagram CTA -->
-        <a href="https://www.instagram.com/retrogreen_salonn/" target="_blank" rel="noopener noreferrer" class="w-full sm:w-1/2 inline-flex items-center justify-center gap-3 bg-brandCharcoal hover:bg-brandViolet hover:text-black border-2 border-brandViolet text-brandViolet font-display font-black text-xl px-8 py-5 uppercase tracking-wider shadow-neon-violet transition-all transform hover:-translate-y-1 active:translate-y-0">
+        <a data-ig href="https://www.instagram.com/retrogreen_salonn/" target="_blank" rel="noopener noreferrer" class="w-full sm:w-1/2 inline-flex items-center justify-center gap-3 bg-brandCharcoal hover:bg-brandViolet hover:text-black border-2 border-brandViolet text-brandViolet font-display font-black text-xl px-8 py-5 uppercase tracking-wider shadow-neon-violet transition-all transform hover:-translate-y-1 active:translate-y-0">
           <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
           </svg>
-          <span>INSTAGRAM</span>
+          <span data-texto="contacto.boton_instagram">INSTAGRAM</span>
         </a>
 
       </div>
 
       <!-- Reassurance note -->
-      <p class="mt-8 font-mono text-xs text-brandMuted">
+      <p class="mt-8 font-mono text-xs text-brandMuted" data-texto="contacto.nota">
         Respondemos consultas de turnos rápidamente en el día.
       </p>
 
@@ -986,76 +987,76 @@
         <div class="md:col-span-6">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-10 h-10 border-2 border-brandGreen flex items-center justify-center bg-black">
-              <span class="text-brandGreen font-display text-2xl font-bold">RG</span>
+              <span class="text-brandGreen font-display text-2xl font-bold" data-texto="marca.iniciales">RG</span>
             </div>
             <div>
               <div class="flex items-baseline gap-1.5">
-                <span class="font-script text-brandViolet text-sm">Retro</span>
-                <span class="font-display text-2xl font-extrabold tracking-wider text-white">GREEN</span>
+                <span class="font-script text-brandViolet text-sm" data-texto="marca.retro">Retro</span>
+                <span class="font-display text-2xl font-extrabold tracking-wider text-white" data-texto="marca.green">GREEN</span>
               </div>
-              <p class="text-[10px] font-mono tracking-widest text-brandGreen uppercase font-bold">
+              <p class="text-[10px] font-mono tracking-widest text-brandGreen uppercase font-bold" data-texto="pie.lema">
                 SALÓN · BARBERÍA · ROCK & ROLL
               </p>
             </div>
           </div>
 
-          <p class="text-brandMuted text-sm font-light max-w-md mb-6 leading-relaxed">
+          <p class="text-brandMuted text-sm font-light max-w-md mb-6 leading-relaxed" data-texto="pie.descripcion">
             Peluquería y barbería con identidad retro, rockera y alternativa en Córdoba, Argentina. Cortes con actitud, vinilos, luces de neón y buena gente.
           </p>
 
           <div class="inline-flex items-center gap-2 text-xs font-mono text-white/80 bg-brandCharcoal border border-brandBorder px-3 py-1.5">
-            <span class="text-brandGreen">📍</span> Córdoba, Argentina · Av. Emilio Caraffa 2086
+            <span class="text-brandGreen">📍</span> <span data-texto="pie.direccion">Córdoba, Argentina · Av. Emilio Caraffa 2086</span>
           </div>
         </div>
 
         <!-- Links col (3 cols) -->
         <div class="md:col-span-3">
-          <h4 class="font-display text-lg uppercase tracking-wider text-white mb-4 border-b border-brandBorder pb-2">
+          <h4 class="font-display text-lg uppercase tracking-wider text-white mb-4 border-b border-brandBorder pb-2" data-texto="pie.nav_titulo">
             NAVEGACIÓN
           </h4>
           <ul class="space-y-2.5 font-mono text-xs text-brandMuted">
-            <li><a href="#hero" class="hover:text-brandGreen transition-colors uppercase">Inicio</a></li>
-            <li><a href="#servicios" class="hover:text-brandGreen transition-colors uppercase">Servicios</a></li>
-            <li><a href="#nosotros" class="hover:text-brandGreen transition-colors uppercase">Nosotros</a></li>
-            <li><a href="#galeria" class="hover:text-brandGreen transition-colors uppercase">Galería de Fotos</a></li>
-            <li><a href="#contacto" class="hover:text-brandGreen transition-colors uppercase">Reservar Turno</a></li>
+            <li><a href="#hero" class="hover:text-brandGreen transition-colors uppercase" data-texto="pie.nav_1">Inicio</a></li>
+            <li><a href="#servicios" class="hover:text-brandGreen transition-colors uppercase" data-texto="pie.nav_2">Servicios</a></li>
+            <li><a href="#nosotros" class="hover:text-brandGreen transition-colors uppercase" data-texto="pie.nav_3">Nosotros</a></li>
+            <li><a href="#galeria" class="hover:text-brandGreen transition-colors uppercase" data-texto="pie.nav_4">Galería de Fotos</a></li>
+            <li><a href="#contacto" class="hover:text-brandGreen transition-colors uppercase" data-texto="pie.nav_5">Reservar Turno</a></li>
           </ul>
         </div>
 
         <!-- Social & Map col (3 cols) -->
         <div class="md:col-span-3">
-          <h4 class="font-display text-lg uppercase tracking-wider text-white mb-4 border-b border-brandBorder pb-2">
+          <h4 class="font-display text-lg uppercase tracking-wider text-white mb-4 border-b border-brandBorder pb-2" data-texto="pie.redes_titulo">
             CONECTÁ CON NOSOTROS
           </h4>
           <ul class="space-y-3 font-mono text-xs">
             <li>
-              <a href="https://www.instagram.com/retrogreen_salonn/" target="_blank" rel="noopener noreferrer" class="text-brandMuted hover:text-brandViolet transition-colors flex items-center gap-2">
-                <span class="text-brandViolet">●</span> Instagram
+              <a data-ig href="https://www.instagram.com/retrogreen_salonn/" target="_blank" rel="noopener noreferrer" class="text-brandMuted hover:text-brandViolet transition-colors flex items-center gap-2">
+                <span class="text-brandViolet">●</span> <span data-texto="pie.red_instagram">Instagram</span>
               </a>
             </li>
             <li>
-              <a href="https://wa.me/5491159758218" target="_blank" rel="noopener noreferrer" class="text-brandMuted hover:text-brandGreen transition-colors flex items-center gap-2">
-                <span class="text-brandGreen">●</span> WhatsApp
+              <a data-wa href="https://wa.me/5491159758218" target="_blank" rel="noopener noreferrer" class="text-brandMuted hover:text-brandGreen transition-colors flex items-center gap-2">
+                <span class="text-brandGreen">●</span> <span data-texto="pie.red_whatsapp">WhatsApp</span>
               </a>
             </li>
             <li>
               <a href="https://open.spotify.com/playlist/3AdBa8WRm8XeYURa0OHXkj" target="_blank" rel="noopener noreferrer" class="text-brandMuted hover:text-[#1DB954] transition-colors flex items-center gap-2">
-                <span class="text-[#1DB954]">●</span> Spotify
+                <span class="text-[#1DB954]">●</span> <span data-texto="pie.red_spotify">Spotify</span>
               </a>
             </li>
             <li>
-              <a href="https://maps.google.com/?q=Av.+Emilio+Caraffa+2086+Cordoba+Argentina" target="_blank" rel="noopener noreferrer" class="text-brandMuted hover:text-white transition-colors flex items-center gap-2">
-                <span>📍</span> Google Maps
+              <a data-maps href="https://maps.google.com/?q=Av.+Emilio+Caraffa+2086+Cordoba+Argentina" target="_blank" rel="noopener noreferrer" class="text-brandMuted hover:text-white transition-colors flex items-center gap-2">
+                <span>📍</span> <span data-texto="pie.red_mapa">Google Maps</span>
               </a>
             </li>
           </ul>
 
           <div class="mt-6 p-3 bg-brandCharcoal border-l-2 border-brandGreen">
-            <span class="text-[11px] font-mono text-brandGreen font-bold block">RETRO GREEN SOUND:</span>
-            <span class="text-[10px] text-brandMuted">Rock clásico, Punk & Alternativo sonando todo el día.</span>
+            <span class="text-[11px] font-mono text-brandGreen font-bold block" data-texto="pie.sonido_titulo">RETRO GREEN SOUND:</span>
+            <span class="text-[10px] text-brandMuted" data-texto="pie.sonido_texto">Rock clásico, Punk & Alternativo sonando todo el día.</span>
             <a href="https://open.spotify.com/playlist/3AdBa8WRm8XeYURa0OHXkj" target="_blank" rel="noopener noreferrer" class="mt-3 flex w-max items-center gap-2 bg-[#1DB954] hover:bg-[#1ed760] text-black font-display font-bold text-sm uppercase tracking-wider px-4 py-2 transition-colors" aria-label="Escuchar la playlist de Retro Green en Spotify">
               <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-              Spotify
+              <span data-texto="pie.sonido_boton">Spotify</span>
             </a>
           </div>
         </div>
@@ -1065,19 +1066,19 @@
       <!-- Copyright Bottom Line -->
       <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-brandMuted/70">
         <div class="flex flex-col items-center sm:items-start gap-1.5 text-center sm:text-left">
-          <span>© <span id="current-year"></span> Retro Green Salón. Todos los derechos reservados.</span>
+          <span>© <span id="current-year"></span> <span data-texto="pie.copyright">Retro Green Salón. Todos los derechos reservados.</span></span>
           <a href="https://wa.me/5493517072841?text=Hola%20Martin!%20Vi%20la%20web%20de%20Retro%20Green%20y%20quiero%20consultar%20por%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener noreferrer" class="text-[11px] hover:text-brandGreen transition-colors">
             Página web hecha por <span class="text-white/80 whitespace-nowrap">Martin Rinaldi Toledo</span> · <span class="whitespace-nowrap">WhatsApp 351 707-2841</span>
           </a>
         </div>
         <div class="flex items-center gap-4 text-[11px]">
-          <span>CÓRDOBA, ARGENTINA</span>
+          <span data-texto="pie.ciudad">CÓRDOBA, ARGENTINA</span>
           <span>·</span>
-          <span class="text-brandGreen">CUT. ROCK. REPEAT.</span>
+          <span class="text-brandGreen" data-texto="pie.lema_final">CUT. ROCK. REPEAT.</span>
           <span>·</span>
           <a href="admin/" class="inline-flex items-center gap-1 hover:text-brandGreen transition-colors" rel="nofollow">
             <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="1"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-            Acceso dueño
+            <span data-texto="pie.acceso">Acceso dueño</span>
           </a>
         </div>
       </div>
@@ -1087,8 +1088,8 @@
 
   <!-- FLOATING MOBILE QUICK-ACTION RESERVATION BUTTON -->
   <div class="fixed bottom-6 right-6 z-40 sm:hidden">
-    <a href="https://wa.me/5491159758218?text=Hola%20Retro%20Green!%20Quiero%20reservar%20un%20turno" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-brandGreen text-black font-display font-extrabold text-base px-5 py-3 shadow-neon-green uppercase tracking-wider active:scale-95 transition-transform">
-      <span>⚡</span> RESERVAR
+    <a data-wa href="https://wa.me/5491159758218?text=Hola%20Retro%20Green!%20Quiero%20reservar%20un%20turno" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-brandGreen text-black font-display font-extrabold text-base px-5 py-3 shadow-neon-green uppercase tracking-wider active:scale-95 transition-transform">
+      <span>⚡</span> <span data-texto="pie.boton_flotante">RESERVAR</span>
     </a>
   </div>
 
@@ -1219,6 +1220,30 @@
           </div>`).join('');
       };
 
+      // Every text marked with data-texto="seccion.clave" comes from datos/textos.json.
+      // An empty field keeps the text written in the HTML.
+      const valor = (obj, ruta) => ruta.split('.').reduce((o, k) => (o == null ? o : o[k]), obj);
+      const renderTextos = textos => {
+        document.querySelectorAll('[data-texto]').forEach(el => {
+          const v = valor(textos, el.dataset.texto);
+          if (typeof v === 'string' && v.trim()) el.textContent = v;
+        });
+
+        const seo = textos.seo || {};
+        if (seo.titulo && seo.titulo.trim()) document.title = seo.titulo;
+        const meta = document.querySelector('meta[name="description"]');
+        if (meta && seo.descripcion && seo.descripcion.trim()) meta.content = seo.descripcion.trim();
+
+        // Changing the phone, the Instagram user or the address also updates the links.
+        const u = textos.ubicacion || {};
+        const tel = String(u.whatsapp_numero ?? '').replace(/\D/g, '');
+        if (tel.length >= 10) document.querySelectorAll('a[data-wa]').forEach(a => { a.href = a.href.replace(/wa\.me\/\d+/, 'wa.me/' + tel); });
+        const ig = String(u.instagram_usuario ?? '').trim().replace(/^@/, '').replace(/[^A-Za-z0-9._]/g, '');
+        if (ig) document.querySelectorAll('a[data-ig]').forEach(a => { a.href = 'https://www.instagram.com/' + ig + '/'; });
+        const dir = [u.direccion, u.ciudad].map(s => String(s ?? '').trim()).filter(Boolean).join(', ');
+        if (dir) document.querySelectorAll('a[data-maps]').forEach(a => { a.href = 'https://maps.google.com/?q=' + encodeURIComponent(dir); });
+      };
+
       const renderHorarios = filas => {
         document.getElementById('horarios-lista').innerHTML = filas.filter(f => f.dias).map(f => `
           <div class="flex justify-between items-center gap-4">
@@ -1227,8 +1252,9 @@
           </div>`).join('');
       };
 
-      Promise.all([loadJSON('datos/fotos.json'), loadJSON('datos/galeria.json'), loadJSON('datos/horarios.json')])
-        .then(([fotos, galeria, horarios]) => {
+      Promise.all([loadJSON('datos/fotos.json'), loadJSON('datos/galeria.json'), loadJSON('datos/horarios.json'), loadJSON('datos/textos.json')])
+        .then(([fotos, galeria, horarios, textos]) => {
+          if (textos) renderTextos(textos);
           if (fotos) {
             document.querySelectorAll('[data-foto]').forEach(img => {
               const src = fotos[img.dataset.foto];
@@ -1237,7 +1263,7 @@
           }
           if (galeria && Array.isArray(galeria.fotos) && galeria.fotos.length) renderGaleria(galeria.fotos);
           if (horarios && Array.isArray(horarios.filas) && horarios.filas.length) renderHorarios(horarios.filas);
-          document.documentElement.dataset.contenido = fotos || galeria || horarios ? 'panel' : 'html';
+          document.documentElement.dataset.contenido = fotos || galeria || horarios || textos ? 'panel' : 'html';
         });
     })();
   </script>

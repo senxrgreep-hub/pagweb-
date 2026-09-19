@@ -1,8 +1,8 @@
 # Retro Green Salón · sitio web
 
 Sitio de Retro Green Salón (Av. Emilio Caraffa 2086, Córdoba), publicado gratis con GitHub Pages
-en **https://peluqueriagreen.com**, con un panel en `/admin` para que el dueño cambie fotos y horarios
-sin tocar código.
+en **https://peluqueriagreen.com**, con un panel en `/admin` para que el dueño cambie fotos, horarios
+y cualquier texto de la página sin tocar código.
 
 - Cuenta de GitHub: `senxrgreep-hub` · repositorio: `pagweb-` (<https://github.com/senxrgreep-hub/pagweb->)
 - Dominio: `peluqueriagreen.com` (registrado en DonWeb, vence el 18/09/2027)
@@ -15,13 +15,15 @@ sin tocar código.
 | `datos/fotos.json` | Las 5 fotos principales (portada, secciones, arcade, afiches). |
 | `datos/galeria.json` | Las fotos de la galería, con etiqueta, título y descripción. |
 | `datos/horarios.json` | Los días y horarios. |
+| `datos/textos.json` | Todos los textos de la página (títulos, servicios, dirección, WhatsApp, etc.). |
 | `img/` | Imágenes del sitio. Lo que sube el dueño desde el panel va a `img/subidas/`. |
 | `admin/` | El panel (Sveltia CMS) y su configuración (`admin/config.yml`). |
 | `CNAME` | El dominio del sitio para GitHub Pages. |
 | `.nojekyll` | Le indica a GitHub que publique los archivos tal cual. No borrarlo. |
 
 Si los archivos de `datos/` no se pueden leer (por ejemplo, abriendo `index.html` desde un pendrive),
-la página muestra las fotos y horarios que tiene escritos adentro.
+la página muestra las fotos, horarios y textos que tiene escritos adentro. Lo mismo pasa campo por
+campo: si en el panel se deja un texto vacío, queda el que ya estaba.
 
 ---
 
@@ -125,9 +127,22 @@ Solo pueden guardar cambios las cuentas con permiso de escritura en el repositor
 
 1. Entrar a <https://peluqueriagreen.com/admin/> (también está el enlace **Acceso dueño** al pie de la página).
 2. **Iniciar sesión con GitHub**.
-3. **Contenido del sitio** → elegir **Fotos principales**, **Galería** u **Horarios**.
+3. **Contenido del sitio** → elegir **Fotos principales**, **Galería**, **Horarios** o **Textos de la página**.
 4. Tocar una foto → **subir una nueva** desde el celular o la compu. El panel la achica y la pasa a WebP.
 5. **Guardar**. En 1–2 minutos la web se actualiza sola.
+
+En **Textos de la página** están todos los textos, agrupados por sección (portada, servicios, historia,
+ubicación, pie de página, etc.). Se tocan las flechitas para abrir cada grupo y se escribe encima.
+Tres campos hacen algo más que cambiar el texto:
+
+| Campo | Qué cambia además |
+|---|---|
+| Ubicación → *Número de WhatsApp* | Todos los botones de reservar y consultar. |
+| Ubicación → *Usuario de Instagram* | Los enlaces al perfil de Instagram. |
+| Ubicación → *Dirección* y *Ciudad* | Los enlaces a Google Maps. |
+
+Si un texto se deja vacío, la página usa el que ya tenía. El diseño, los colores y las secciones no se
+tocan desde el panel: para eso hay que pedirle un cambio a Martín.
 
 Cada cambio queda en el historial del repositorio, así que cualquier error se puede deshacer.
 
