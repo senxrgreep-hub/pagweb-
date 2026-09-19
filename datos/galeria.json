@@ -1,0 +1,28 @@
+{
+  "fotos": [
+    {
+      "imagen": "https://lh3.googleusercontent.com/aida-public/AB6AXuAeJUABve59ZML_h-qtdwJ5eJZg7IIst52WoleshCwqkb9SSbs5Gzz9i92-e-3nO1yrjZaaPq_diXp7qJQVu9RhqM14kmujn0EJh53Bz2kJLzRu-SbfCOP8cJnkJIjuns8jI4qKV2gsfB4lErN0UYj4Hanzvx2vWN6r777OcXZZN6o6vogM7ha7esJXICOAKizydWfSEa9-zOm2p6YFwWaVPli3Q6iNOyz6DW--x61ybZCRwqX774N4Hw",
+      "etiqueta": "Wall of Fame",
+      "titulo": "POSTERS, VINILOS & PUNK",
+      "descripcion": "Las paredes que cuentan la historia del rock and roll en nuestro salón."
+    },
+    {
+      "imagen": "https://lh3.googleusercontent.com/aida-public/AB6AXuBXAWn-vLxXQq5t-4fG1xpBdvnYNqdz7StGiaZpwKwxUb_AkzxK9GzY0QuFopyulLLa6FBFh0JHd6hQUOep9sTuo6A4pWyZaDz9W012mcYETAB-1uZ4ngmuNYNCZDVAXVZvZf5a9GaH8CT9RB8iz6b-NwI5ronxeSBItat1JciJvv2izdqR1u9NiQuerVsUm4-_rBK3GBjwo467XYQhfNIKs2XG_6pFJ7o-Gqf9-l_SGZRgxcwgLca0Xw",
+      "etiqueta": "Barber Gear",
+      "titulo": "SILLÓN CLÁSICO & ESPEJOS",
+      "descripcion": "Estética auténtica para disfrutar de cada corte."
+    },
+    {
+      "imagen": "https://lh3.googleusercontent.com/aida-public/AB6AXuD6vQOvXsGUexKUjmXYHew9UlzBAWASPXAVYxxuBSTbmvtpXjimWuG3gxAw_kmpusLP-kNtMOeBpKsnv4vfbv-_YgKyOshwHDt9hRjLU1oE6IByv9IzYA13KxQEVECh2cVxdrLA8RIf43a_Y9vWCgaSFZUOW_0BEiQCNtIDzXBjNWhNOuh5_EXsBKMet9A8nEnhgsMw02yB6lSbTOpKISwApQI5YqB0CdLC9_1wpb4b8A4hvEnRfo1riQ",
+      "etiqueta": "Atmósfera",
+      "titulo": "LUCES DE NEÓN & IDENTIDAD",
+      "descripcion": "Verde retro, violeta de fondo y un ambiente único en la ciudad de Córdoba."
+    },
+    {
+      "imagen": "https://lh3.googleusercontent.com/aida-public/AB6AXuCI68CjUJQWZwOiLyIcdEYRHmKGVXfBJ_XyR6NwBjsbaNaiRYbbzKfWrMcmJZSdgFEr9SUpwpL2di5u-A3OCLkS_RKnQjToFpfdWDqO5c9M_dUOelSVva6u7J17LASidp7DW8s4mcOy0nOeM8d4XY6wvvFFextAc27VbBZR4cPDXyadhWfEkPD3zsoV9ZKKwBrau7VNkUSvqF8urt4dvff0DdAGDb25UUq_ea__Px5HdIlKYXjqrw6RtQ",
+      "etiqueta": "Detalles",
+      "titulo": "CABLE NEÓN & MÁQUINAS",
+      "descripcion": "Cada detalle pensado con devoción por el oficio."
+    }
+  ]
+}

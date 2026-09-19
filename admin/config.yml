@@ -1,0 +1,89 @@
+# Panel de administración de Retro Green Salón (Sveltia CMS).
+
+backend:
+  name: github
+  repo: senxrgreep-hub/pagweb-
+  branch: main
+  # Worker "sveltia-cms-auth" en Cloudflare (hace funcionar "Iniciar sesión con GitHub").
+  base_url: https://sveltia-cms-auth.senxrgreep.workers.dev
+
+site_url: https://peluqueriagreen.com
+
+# Dónde se guardan las fotos que sube el dueño.
+media_folder: /img/subidas
+public_folder: /img/subidas
+
+# Las fotos del celular pesan mucho: se achican y se pasan a WebP al subirlas.
+media_libraries:
+  all:
+    slugify_filename: true
+    transformations:
+      raster_image:
+        format: webp
+        quality: 82
+        width: 1920
+        height: 1920
+
+collections:
+  - name: sitio
+    label: Contenido del sitio
+    files:
+      - name: fotos
+        label: Fotos principales
+        file: datos/fotos.json
+        fields:
+          - label: Foto de portada (fondo de arriba de todo)
+            name: portada
+            widget: image
+          - label: Foto de la sección “Más que una peluquería”
+            name: nosotros
+            widget: image
+          - label: Foto de la sección “No es solo un corte”
+            name: herramientas
+            widget: image
+          - label: Foto de la máquina arcade
+            name: arcade
+            widget: image
+          - label: Foto de los afiches de películas
+            name: afiches
+            widget: image
+
+      - name: galeria
+        label: Galería
+        file: datos/galeria.json
+        fields:
+          - label: Fotos de la galería
+            name: fotos
+            widget: list
+            summary: "{{fields.titulo}}"
+            fields:
+              - label: Foto
+                name: imagen
+                widget: image
+              - label: Etiqueta (cartelito de color, opcional)
+                name: etiqueta
+                widget: string
+                required: false
+              - label: Título
+                name: titulo
+                widget: string
+              - label: Descripción (opcional)
+                name: descripcion
+                widget: string
+                required: false
+
+      - name: horarios
+        label: Horarios
+        file: datos/horarios.json
+        fields:
+          - label: Días y horarios
+            name: filas
+            widget: list
+            summary: "{{fields.dias}}: {{fields.horario}}"
+            fields:
+              - label: Días (por ejemplo, “Martes a sábados”)
+                name: dias
+                widget: string
+              - label: Horario (por ejemplo, “10:00 a 20:30 hs” o “Cerrado”)
+                name: horario
+                widget: string

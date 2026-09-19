@@ -1,0 +1,12 @@
+{
+  "filas": [
+    {
+      "dias": "Martes a sábados",
+      "horario": "10:00 a 20:30 hs"
+    },
+    {
+      "dias": "Domingos y lunes",
+      "horario": "Cerrado (escuchando discos)"
+    }
+  ]
+}
