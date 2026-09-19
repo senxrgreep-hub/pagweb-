@@ -36,12 +36,12 @@ Cuenta `senxrgreep-hub`. Recomendado: activar la verificación en dos pasos
    (GitHub Pages gratis necesita que el repositorio sea público. El panel igual está protegido.)
 2. Si la cuenta es del dueño: **Settings → Collaborators → Add people** → agregar la cuenta de Martín.
 
-## Paso 3 · Subir los archivos
+## Paso 3 · Subir los archivos ✔
 
 Opción fácil: en el repositorio, **uploading an existing file**, arrastrar **todo el contenido** de esta
 carpeta (incluidas `admin`, `datos`, `img` y los archivos `CNAME` y `.nojekyll`) y tocar **Commit changes**.
 
-## Paso 4 · Activar GitHub Pages
+## Paso 4 · Activar GitHub Pages ✔
 
 1. **Settings → Pages** → *Source*: **Deploy from a branch** → rama **main**, carpeta **/ (root)** → **Save**.
 2. En *Custom domain* escribir `peluqueriagreen.com` → **Save**.
@@ -70,7 +70,7 @@ Dejar los nameservers de DonWeb y, en la **zona DNS**:
    **Settings → Pages**, marcar **Enforce HTTPS**. El candado es gratis: no hace falta comprar
    el certificado que ofrece DonWeb (por eso DonWeb muestra "Salud del sitio: vulnerable").
 
-## Paso 6 · Activar "Iniciar sesión con GitHub" en el panel
+## Paso 6 · Activar "Iniciar sesión con GitHub" en el panel ✔
 
 GitHub Pages no puede guardar claves secretas, así que el inicio de sesión pasa por un
 intermediario gratuito en Cloudflare: el **Worker** de Sveltia CMS Authenticator.
