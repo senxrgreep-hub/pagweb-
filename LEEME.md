@@ -135,14 +135,31 @@ En **Textos de la página** están todos los textos, agrupados por sección (por
 ubicación, pie de página, etc.). Se tocan las flechitas para abrir cada grupo y se escribe encima.
 Tres campos hacen algo más que cambiar el texto:
 
-| Campo | Qué cambia además |
-|---|---|
-| Ubicación → *Número de WhatsApp* | Todos los botones de reservar y consultar. |
-| Ubicación → *Usuario de Instagram* | Los enlaces al perfil de Instagram. |
-| Ubicación → *Dirección* y *Ciudad* | Los enlaces a Google Maps. |
+| Campo | Qué cambia además | Cómo se escribe |
+|---|---|---|
+| Ubicación → *Número de WhatsApp* | Todos los botones de reservar y consultar. | Con el código del país: `+54 9 11 5975-8218`. |
+| Ubicación → *Usuario de Instagram* | Los enlaces al perfil de Instagram. | `@retrogreen_salonn`, o pegando el enlace del perfil. |
+| Ubicación → *Dirección* y *Ciudad* | Los enlaces a Google Maps. | Como se escribe normalmente. |
 
 Si un texto se deja vacío, la página usa el que ya tenía. El diseño, los colores y las secciones no se
 tocan desde el panel: para eso hay que pedirle un cambio a Martín.
+
+## Qué no se puede romper desde el panel
+
+Probado con lo peor que se puede llegar a guardar:
+
+| Si el dueño… | La página… |
+|---|---|
+| Borra todos los textos y las fotos | Muestra los que tiene escritos adentro. No queda nada en blanco. |
+| Escribe código HTML o `<script>` | Lo muestra como texto. No se ejecuta nada. |
+| Escribe un texto larguísimo o una palabra sin espacios | La corta en varias líneas. No se descuadra ni en el celular. |
+| Escribe el WhatsApp sin el código del país | Avisa al guardar; si igual queda mal, los botones siguen con el número anterior. |
+| Pega el enlace completo de Instagram | Saca el usuario solo y arma bien el enlace. |
+| Borra todas las fotos de la galería o todos los horarios | Vuelve a mostrar los que tenía. |
+| Carga 9 fotos en la galería o 6 filas de horarios | Las acomoda igual, sin huecos. |
+| Sube una foto que no existe o la borra del repositorio | Deja el hueco de esa foto, el resto sigue funcionando. |
+
+El enlace del crédito del pie (el WhatsApp de Martín) no se toca desde el panel.
 
 Cada cambio queda en el historial del repositorio, así que cualquier error se puede deshacer.
 

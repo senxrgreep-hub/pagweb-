@@ -591,6 +591,7 @@ collections:
                 name: direccion
                 widget: string
                 required: false
+                hint: "La calle y el número, como Av. Emilio Caraffa 2086. Junto con la ciudad arma el enlace al mapa."
               - label: "Ciudad"
                 name: ciudad
                 widget: string
@@ -607,6 +608,8 @@ collections:
                 name: whatsapp_numero
                 widget: string
                 required: false
+                hint: "Con el código del país, como +54 9 11 5975-8218. Si se escribe de otra forma, los botones siguen con el número anterior."
+                pattern: ['^\+?\s*54[\s\-()0-9]{10,18}$', 'Escribilo con el código del país, por ejemplo: +54 9 11 5975-8218']
               - label: "Palabra “Instagram”"
                 name: instagram_etiqueta
                 widget: string
@@ -615,6 +618,8 @@ collections:
                 name: instagram_usuario
                 widget: string
                 required: false
+                hint: "El usuario, como @retrogreen_salonn. También se puede pegar la dirección completa del perfil."
+                pattern: ['^\s*(@?[A-Za-z0-9._]{1,30}|https?://(www\.)?instagram\.com/[^/?#\s]+.*)\s*$', 'Escribí el usuario (por ejemplo @retrogreen_salonn) o pegá el enlace del perfil']
               - label: "Botón “Cómo llegar”"
                 name: boton_mapa
                 widget: string

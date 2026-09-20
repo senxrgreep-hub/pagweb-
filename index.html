@@ -77,6 +77,11 @@
         linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     }
 
+    /* Texts edited from the panel: a very long word wraps instead of widening the page. */
+    [data-texto], #galeria-grid, #horarios-lista {
+      overflow-wrap: anywhere;
+    }
+
     /* Tape & Sticker Badge styling */
     .sticker-rock {
       transform: rotate(-3deg);
@@ -1223,24 +1228,46 @@
       // Every text marked with data-texto="seccion.clave" comes from datos/textos.json.
       // An empty field keeps the text written in the HTML.
       const valor = (obj, ruta) => ruta.split('.').reduce((o, k) => (o == null ? o : o[k]), obj);
+      // The phone and the Instagram user also change links, so they are applied further down:
+      // only if what was written can be turned into a working link.
+      const conEnlace = ['ubicacion.whatsapp_numero', 'ubicacion.instagram_usuario'];
+      const texto = (obj, ruta) => { const v = valor(obj, ruta); return typeof v === 'string' && v.trim() ? v.trim() : ''; };
+      const escribir = (clave, valorNuevo) => document.querySelectorAll(`[data-texto="${clave}"]`).forEach(el => { el.textContent = valorNuevo; });
+
       const renderTextos = textos => {
         document.querySelectorAll('[data-texto]').forEach(el => {
-          const v = valor(textos, el.dataset.texto);
+          const clave = el.dataset.texto;
+          if (conEnlace.includes(clave)) return;
+          const v = valor(textos, clave);
           if (typeof v === 'string' && v.trim()) el.textContent = v;
         });
 
-        const seo = textos.seo || {};
-        if (seo.titulo && seo.titulo.trim()) document.title = seo.titulo;
+        const titulo = texto(textos, 'seo.titulo');
+        if (titulo) document.title = titulo;
         const meta = document.querySelector('meta[name="description"]');
-        if (meta && seo.descripcion && seo.descripcion.trim()) meta.content = seo.descripcion.trim();
+        const descripcion = texto(textos, 'seo.descripcion');
+        if (meta && descripcion) meta.content = descripcion;
 
-        // Changing the phone, the Instagram user or the address also updates the links.
-        const u = textos.ubicacion || {};
-        const tel = String(u.whatsapp_numero ?? '').replace(/\D/g, '');
-        if (tel.length >= 10) document.querySelectorAll('a[data-wa]').forEach(a => { a.href = a.href.replace(/wa\.me\/\d+/, 'wa.me/' + tel); });
-        const ig = String(u.instagram_usuario ?? '').trim().replace(/^@/, '').replace(/[^A-Za-z0-9._]/g, '');
-        if (ig) document.querySelectorAll('a[data-ig]').forEach(a => { a.href = 'https://www.instagram.com/' + ig + '/'; });
-        const dir = [u.direccion, u.ciudad].map(s => String(s ?? '').trim()).filter(Boolean).join(', ');
+        // WhatsApp: only in international format (+54 9 …), which is the one wa.me understands.
+        // If it is written any other way, both the number shown and the buttons stay as they were.
+        const tel = texto(textos, 'ubicacion.whatsapp_numero');
+        const digitos = tel.replace(/\D/g, '');
+        if (/^54\d{10,12}$/.test(digitos)) {
+          escribir('ubicacion.whatsapp_numero', tel);
+          document.querySelectorAll('a[data-wa]').forEach(a => { a.href = a.href.replace(/wa\.me\/\d+/, 'wa.me/' + digitos); });
+        }
+
+        // Instagram: the user, with or without @, or the address of the profile pasted whole.
+        let ig = texto(textos, 'ubicacion.instagram_usuario');
+        const desdeEnlace = ig.match(/instagram\.com\/([^/?#\s]+)/i);
+        if (desdeEnlace) ig = desdeEnlace[1];
+        ig = ig.replace(/^@/, '');
+        if (/^[A-Za-z0-9._]{1,30}$/.test(ig)) {
+          escribir('ubicacion.instagram_usuario', '@' + ig);
+          document.querySelectorAll('a[data-ig]').forEach(a => { a.href = 'https://www.instagram.com/' + ig + '/'; });
+        }
+
+        const dir = [texto(textos, 'ubicacion.direccion'), texto(textos, 'ubicacion.ciudad')].filter(Boolean).join(', ');
         if (dir) document.querySelectorAll('a[data-maps]').forEach(a => { a.href = 'https://maps.google.com/?q=' + encodeURIComponent(dir); });
       };
 
