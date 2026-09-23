@@ -14,6 +14,7 @@ y cualquier texto de la página sin tocar código.
 | `index.html` | La página. |
 | `datos/fotos.json` | Las 5 fotos principales (portada, secciones, arcade, afiches). |
 | `datos/galeria.json` | Las fotos de la galería, con etiqueta, título y descripción. |
+| `datos/secciones.json` | Qué partes de la página se muestran y en qué orden. |
 | `datos/horarios.json` | Los días y horarios. |
 | `datos/textos.json` | Todos los textos de la página (títulos, servicios, dirección, WhatsApp, etc.). |
 | `img/` | Imágenes del sitio. Lo que sube el dueño desde el panel va a `img/subidas/`. |
@@ -127,9 +128,16 @@ Solo pueden guardar cambios las cuentas con permiso de escritura en el repositor
 
 1. Entrar a <https://peluqueriagreen.com/admin/> (también está el enlace **Acceso dueño** al pie de la página).
 2. **Iniciar sesión con GitHub**.
-3. **Contenido del sitio** → elegir **Fotos principales**, **Galería**, **Horarios** o **Textos de la página**.
+3. **Contenido del sitio** → elegir **Secciones de la página**, **Fotos principales**, **Galería**,
+   **Horarios** o **Textos de la página**.
 4. Tocar una foto → **subir una nueva** desde el celular o la compu. El panel la achica y la pasa a WebP.
 5. **Guardar**. En 1–2 minutos la web se actualiza sola.
+
+En **Secciones de la página** está la lista de las partes de la página, en el orden en que se ven.
+Cada una tiene un interruptor: apagada, desaparece de la web y también del menú de arriba y del pie.
+No se borra nada: el contenido queda guardado y vuelve cuando se prende de nuevo. Arrastrando de las
+rayitas se cambia el orden. Si el archivo se rompe o queda con menos de tres partes, la página se
+muestra completa, como está escrita en el HTML.
 
 En **Textos de la página** están todos los textos, agrupados por sección (portada, servicios, historia,
 ubicación, pie de página, etc.). Se tocan las flechitas para abrir cada grupo y se escribe encima.

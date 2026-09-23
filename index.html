@@ -77,6 +77,11 @@
         linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     }
 
+    /* Sections turned off from the panel: this beats the display of the utility classes. */
+    [hidden] {
+      display: none !important;
+    }
+
     /* Texts edited from the panel: a very long word wraps instead of widening the page. */
     [data-texto], #galeria-grid, #horarios-lista {
       overflow-wrap: anywhere;
@@ -159,7 +164,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
       <!-- BRAND LOGO -->
-      <a href="#hero" class="flex items-center gap-3 group">
+      <a href="#hero" data-fijo class="flex items-center gap-3 group">
         <div class="w-10 h-10 border-2 border-brandGreen flex items-center justify-center bg-black shadow-neon-green-sm group-hover:scale-105 transition-transform">
           <span class="text-brandGreen font-display text-2xl font-bold tracking-tighter" data-texto="marca.iniciales">RG</span>
         </div>
@@ -605,7 +610,7 @@
   </section>
 
   <!-- EXPERIENCE SECTION (NO ES SOLO UN CORTE) -->
-  <section class="py-24 bg-black relative overflow-hidden border-b border-brandBorder">
+  <section id="experiencia" class="py-24 bg-black relative overflow-hidden border-b border-brandBorder">
     
     <!-- Background atmospheric glow -->
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brandGreen/10 rounded-full blur-[140px] pointer-events-none"></div>
@@ -807,7 +812,7 @@
   </section>
 
   <!-- LOCATION SECTION (VENÍ A CONOCERNOS) -->
-  <section class="py-24 bg-brandCharcoal relative border-b border-brandBorder">
+  <section id="ubicacion" class="py-24 bg-brandCharcoal relative border-b border-brandBorder">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -1285,8 +1290,40 @@
           </div>`).join('');
       };
 
-      Promise.all([loadJSON('datos/fotos.json'), loadJSON('datos/galeria.json'), loadJSON('datos/horarios.json'), loadJSON('datos/textos.json')])
-        .then(([fotos, galeria, horarios, textos]) => {
+      // Sections turned off from the panel are taken off the page, together with the menu links
+      // that point at them. The order of the list is the order they are shown in.
+      const TODAS = ['hero', 'nosotros', 'servicios', 'historia', 'experiencia', 'clasicos', 'galeria', 'ubicacion', 'contacto'];
+      const renderSecciones = lista => {
+        const filas = lista.filter(f => f && TODAS.includes(f.seccion));
+        // A file with almost nothing in it would empty the page: better to leave it as it is.
+        if (filas.length < 3) return;
+        // The page footer, not the little one inside the history quote.
+        const pie = document.querySelector('body > footer');
+        const puestas = new Set();
+        filas.forEach(({ seccion, visible }) => {
+          if (puestas.has(seccion)) return;
+          puestas.add(seccion);
+          const el = document.getElementById(seccion);
+          if (!el) return;
+          const seVe = visible !== false;
+          el.hidden = !seVe;
+          if (seVe) document.body.insertBefore(el, pie);
+          document.querySelectorAll(`a[href="#${seccion}"]:not([data-fijo])`).forEach(a => {
+            const item = a.closest('li') || a;
+            item.hidden = !seVe;
+          });
+        });
+        // A section missing from the list is treated as turned off.
+        TODAS.filter(id => !puestas.has(id)).forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.hidden = true;
+          document.querySelectorAll(`a[href="#${id}"]:not([data-fijo])`).forEach(a => { (a.closest('li') || a).hidden = true; });
+        });
+      };
+
+      Promise.all([loadJSON('datos/fotos.json'), loadJSON('datos/galeria.json'), loadJSON('datos/horarios.json'), loadJSON('datos/textos.json'), loadJSON('datos/secciones.json')])
+        .then(([fotos, galeria, horarios, textos, secciones]) => {
+          if (secciones && Array.isArray(secciones.secciones)) renderSecciones(secciones.secciones);
           if (textos) renderTextos(textos);
           if (fotos) {
             document.querySelectorAll('[data-foto]').forEach(img => {
@@ -1296,7 +1333,7 @@
           }
           if (galeria && Array.isArray(galeria.fotos) && galeria.fotos.length) renderGaleria(galeria.fotos);
           if (horarios && Array.isArray(horarios.filas) && horarios.filas.length) renderHorarios(horarios.filas);
-          document.documentElement.dataset.contenido = fotos || galeria || horarios || textos ? 'panel' : 'html';
+          document.documentElement.dataset.contenido = fotos || galeria || horarios || textos || secciones ? 'panel' : 'html';
         });
     })();
   </script>

@@ -27,7 +27,38 @@ media_libraries:
 collections:
   - name: sitio
     label: Contenido del sitio
+    editor:
+      preview: false
     files:
+      - name: secciones
+        label: Secciones de la página
+        file: datos/secciones.json
+        description: "Prendé, apagá y ordená las partes de la página. Lo que se apaga no se borra: guarda su contenido y vuelve cuando lo prendés."
+        fields:
+          - label: Partes de la página
+            name: secciones
+            hint: Se muestran en este orden. Arrastrá de las rayitas para cambiarlo.
+            widget: list
+            summary: "{{fields.seccion}}"
+            fields:
+              - label: Parte de la página
+                name: seccion
+                widget: select
+                options:
+                  - { label: "Portada (el nombre grande y los botones)", value: hero }
+                  - { label: "Más que una experiencia (sobre el salón)", value: nosotros }
+                  - { label: "Nuestros servicios", value: servicios }
+                  - { label: "Historia", value: historia }
+                  - { label: "No es solo un corte", value: experiencia }
+                  - { label: "Juegos y películas clásicas", value: clasicos }
+                  - { label: "Galería del salón", value: galeria }
+                  - { label: "Ubicación, horarios y contacto", value: ubicacion }
+                  - { label: "¿Sacamos turno? (botones del final)", value: contacto }
+              - label: Se muestra en la página
+                name: visible
+                widget: boolean
+                default: true
+
       - name: fotos
         label: Fotos principales
         file: datos/fotos.json

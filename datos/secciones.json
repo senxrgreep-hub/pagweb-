@@ -1,0 +1,13 @@
+{
+  "secciones": [
+    { "seccion": "hero", "visible": true },
+    { "seccion": "nosotros", "visible": false },
+    { "seccion": "servicios", "visible": true },
+    { "seccion": "historia", "visible": true },
+    { "seccion": "experiencia", "visible": true },
+    { "seccion": "clasicos", "visible": true },
+    { "seccion": "galeria", "visible": true },
+    { "seccion": "ubicacion", "visible": true },
+    { "seccion": "contacto", "visible": true }
+  ]
+}
