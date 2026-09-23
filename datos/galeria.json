@@ -19,6 +19,12 @@
       "descripcion": "Estética auténtica para disfrutar de cada corte."
     },
     {
+      "imagen": "/img/subidas/1000065097.webp",
+      "etiqueta": "",
+      "titulo": "Corte",
+      "descripcion": "Autor: Ezequiel"
+    },
+    {
       "imagen": "https://lh3.googleusercontent.com/aida-public/AB6AXuD6vQOvXsGUexKUjmXYHew9UlzBAWASPXAVYxxuBSTbmvtpXjimWuG3gxAw_kmpusLP-kNtMOeBpKsnv4vfbv-_YgKyOshwHDt9hRjLU1oE6IByv9IzYA13KxQEVECh2cVxdrLA8RIf43a_Y9vWCgaSFZUOW_0BEiQCNtIDzXBjNWhNOuh5_EXsBKMet9A8nEnhgsMw02yB6lSbTOpKISwApQI5YqB0CdLC9_1wpb4b8A4hvEnRfo1riQ",
       "etiqueta": "Atmósfera",
       "titulo": "LUCES DE NEÓN & IDENTIDAD",
@@ -29,12 +35,6 @@
       "etiqueta": "Detalles",
       "titulo": "CABLE NEÓN & MÁQUINAS",
       "descripcion": "Cada detalle pensado con devoción por el oficio."
-    },
-    {
-      "imagen": "/img/subidas/1000065097.webp",
-      "etiqueta": "",
-      "titulo": "Corte",
-      "descripcion": "Autor: Ezequiel"
     }
   ]
 }
