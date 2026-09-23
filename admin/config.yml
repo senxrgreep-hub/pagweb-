@@ -37,27 +37,70 @@ collections:
         fields:
           - label: Partes de la página
             name: secciones
-            hint: Se muestran en este orden. Arrastrá de las rayitas para cambiarlo.
+            hint: "Se muestran en este orden. Arrastrá de las rayitas para moverlas y tocá “Agregar” para sumar una sección nueva."
             widget: list
-            summary: "{{fields.seccion}}"
-            fields:
-              - label: Parte de la página
-                name: seccion
-                widget: select
-                options:
-                  - { label: "Portada (el nombre grande y los botones)", value: hero }
-                  - { label: "Más que una experiencia (sobre el salón)", value: nosotros }
-                  - { label: "Nuestros servicios", value: servicios }
-                  - { label: "Historia", value: historia }
-                  - { label: "No es solo un corte", value: experiencia }
-                  - { label: "Juegos y películas clásicas", value: clasicos }
-                  - { label: "Galería del salón", value: galeria }
-                  - { label: "Ubicación, horarios y contacto", value: ubicacion }
-                  - { label: "¿Sacamos turno? (botones del final)", value: contacto }
-              - label: Se muestra en la página
-                name: visible
-                widget: boolean
-                default: true
+            types:
+              - label: "Parte que ya existe"
+                name: fija
+                summary: "{{fields.seccion}}"
+                fields:
+                  - label: Parte de la página
+                    name: seccion
+                    widget: select
+                    options:
+                      - { label: "Portada (el nombre grande y los botones)", value: hero }
+                      - { label: "Más que una experiencia (sobre el salón)", value: nosotros }
+                      - { label: "Nuestros servicios", value: servicios }
+                      - { label: "Historia", value: historia }
+                      - { label: "No es solo un corte", value: experiencia }
+                      - { label: "Juegos y películas clásicas", value: clasicos }
+                      - { label: "Galería del salón", value: galeria }
+                      - { label: "Ubicación, horarios y contacto", value: ubicacion }
+                      - { label: "¿Sacamos turno? (botones del final)", value: contacto }
+                  - label: Se muestra en la página
+                    name: visible
+                    widget: boolean
+                    default: true
+              - label: "Sección nueva"
+                name: nueva
+                summary: "{{fields.titulo}}"
+                fields:
+                  - label: Título
+                    name: titulo
+                    widget: string
+                    required: false
+                  - label: "Última palabra del título, en verde (opcional)"
+                    name: titulo_verde
+                    widget: string
+                    required: false
+                  - label: Texto
+                    name: texto
+                    widget: text
+                    required: false
+                  - label: Foto (opcional)
+                    name: foto
+                    widget: image
+                    required: false
+                  - label: "Forma de la sección"
+                    name: estilo
+                    widget: select
+                    default: texto_foto
+                    options:
+                      - { label: "Texto a la izquierda y foto a la derecha", value: texto_foto }
+                      - { label: "Todo centrado, con la foto arriba", value: centrado }
+                  - label: "Texto del botón (opcional)"
+                    name: boton_texto
+                    widget: string
+                    required: false
+                  - label: "Adónde lleva el botón (opcional)"
+                    name: boton_enlace
+                    widget: string
+                    required: false
+                    hint: "Una dirección web completa, o #contacto para llevar a otra parte de la página."
+                  - label: Se muestra en la página
+                    name: visible
+                    widget: boolean
+                    default: true
 
       - name: contacto
         label: Teléfono y ubicación

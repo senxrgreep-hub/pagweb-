@@ -1,13 +1,13 @@
 {
   "secciones": [
-    { "seccion": "hero", "visible": true },
-    { "seccion": "nosotros", "visible": false },
-    { "seccion": "servicios", "visible": true },
-    { "seccion": "historia", "visible": true },
-    { "seccion": "experiencia", "visible": true },
-    { "seccion": "clasicos", "visible": true },
-    { "seccion": "galeria", "visible": true },
-    { "seccion": "ubicacion", "visible": true },
-    { "seccion": "contacto", "visible": true }
+    { "type": "fija", "seccion": "hero", "visible": true },
+    { "type": "fija", "seccion": "nosotros", "visible": false },
+    { "type": "fija", "seccion": "servicios", "visible": true },
+    { "type": "fija", "seccion": "historia", "visible": true },
+    { "type": "fija", "seccion": "experiencia", "visible": true },
+    { "type": "fija", "seccion": "clasicos", "visible": true },
+    { "type": "fija", "seccion": "galeria", "visible": true },
+    { "type": "fija", "seccion": "ubicacion", "visible": true },
+    { "type": "fija", "seccion": "contacto", "visible": true }
   ]
 }

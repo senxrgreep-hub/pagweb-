@@ -14,12 +14,12 @@ y cualquier texto de la página sin tocar código.
 | `index.html` | La página. |
 | `datos/fotos.json` | Las 5 fotos principales (portada, secciones, arcade, afiches). |
 | `datos/galeria.json` | Las fotos de la galería, con etiqueta, título y descripción. |
-| `datos/secciones.json` | Qué partes de la página se muestran y en qué orden. |
+| `datos/secciones.json` | Qué partes se muestran, en qué orden, y las secciones nuevas. |
 | `datos/contacto.json` | El WhatsApp, el Instagram y la dirección del salón. |
 | `datos/horarios.json` | Los días y horarios. |
 | `datos/textos.json` | Todos los textos de la página (títulos, servicios, dirección, WhatsApp, etc.). |
 | `img/` | Imágenes del sitio. Lo que sube el dueño desde el panel va a `img/subidas/`. |
-| `admin/` | El panel (Sveltia CMS) y su configuración (`admin/config.yml`). |
+| `admin/` | El panel (Sveltia CMS), su configuración (`admin/config.yml`) y la vista previa. |
 | `CNAME` | El dominio del sitio para GitHub Pages. |
 | `.nojekyll` | Le indica a GitHub que publique los archivos tal cual. No borrarlo. |
 
@@ -135,10 +135,21 @@ Solo pueden guardar cambios las cuentas con permiso de escritura en el repositor
 5. **Guardar**. En 1–2 minutos la web se actualiza sola.
 
 En **Secciones de la página** está la lista de las partes de la página, en el orden en que se ven.
-Cada una tiene un interruptor: apagada, desaparece de la web y también del menú de arriba y del pie.
-No se borra nada: el contenido queda guardado y vuelve cuando se prende de nuevo. Arrastrando de las
-rayitas se cambia el orden. Si el archivo se rompe o queda con menos de tres partes, la página se
-muestra completa, como está escrita en el HTML.
+Ahí se hace todo:
+
+- **Apagar una parte**: el interruptor. Desaparece de la web y también del menú y del pie. No se borra
+  nada: el contenido queda guardado y vuelve cuando se prende de nuevo.
+- **Cambiar el orden**: arrastrando de las rayitas.
+- **Agregar una sección nueva**: **Agregar → Sección nueva**. Se le pone título, texto, una foto y,
+  si se quiere, un botón. Hay dos formas: *texto a la izquierda con foto a la derecha*, o *todo
+  centrado*. Queda con los mismos colores y la misma tipografía que el resto de la página.
+
+Si el archivo se rompe o queda con menos de tres partes, la página se muestra completa, como está
+escrita en el HTML.
+
+**La vista previa.** Mientras se edita, a la derecha se ve la página como en un celular, ya puesta en
+la parte que se está tocando. Los textos se actualizan mientras se escribe, antes de guardar; las
+fotos y las listas se ven después de guardar. Se esconde con la ✕ y vuelve con “Ver la página”.
 
 En **Textos de la página** están todos los textos, agrupados por sección (portada, servicios, historia,
 ubicación, pie de página, etc.). Se tocan las flechitas para abrir cada grupo y se escribe encima.
@@ -152,9 +163,7 @@ En **Teléfono y ubicación** están los datos de contacto, que cambian en toda 
 | *Usuario de Instagram* | Los enlaces al perfil de Instagram. | `@retrogreen_salonn`, o pegando el enlace del perfil. |
 | *Dirección* y *Ciudad* | Los enlaces a Google Maps. | Como se escribe normalmente. |
 
-Mientras se edita, abajo a la derecha aparece un recuadro con la foto de la parte de la página que se
-está tocando. Se esconde con la ✕ y vuelve con el botón “Ver qué estoy editando”. Las fotos están en
-`admin/ayuda/`: si el diseño cambia mucho, conviene sacarlas de nuevo.
+
 
 Si un texto se deja vacío, la página usa el que ya tenía. El diseño, los colores y las secciones no se
 tocan desde el panel: para eso hay que pedirle un cambio a Martín.

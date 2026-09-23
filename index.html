@@ -1293,19 +1293,77 @@
       // Sections turned off from the panel are taken off the page, together with the menu links
       // that point at them. The order of the list is the order they are shown in.
       const TODAS = ['hero', 'nosotros', 'servicios', 'historia', 'experiencia', 'clasicos', 'galeria', 'ubicacion', 'contacto'];
+
+      // Enlaces escritos desde el panel: solo los que llevan a algún lado conocido.
+      const enlaceSeguro = v => {
+        const u = String(v ?? '').trim();
+        return /^(https?:\/\/|mailto:|tel:|#|\/)/i.test(u) ? u : '';
+      };
+
+      // Una sección creada desde el panel. Siempre con la misma pinta que el resto de la página.
+      const crearSeccion = (b, i) => {
+        const fondo = i % 2 ? 'bg-brandCharcoal' : 'bg-brandDark';
+        const titulo = esc(b.titulo || '');
+        const verde = b.titulo_verde ? ` <span class="text-brandGreen neon-text-green">${esc(b.titulo_verde)}</span>` : '';
+        const texto = b.texto ? `<p class="text-lg sm:text-xl text-brandMuted leading-relaxed whitespace-pre-line">${esc(b.texto)}</p>` : '';
+        const enlace = enlaceSeguro(b.boton_enlace);
+        const externo = /^https?:/i.test(enlace) ? ' target="_blank" rel="noopener noreferrer"' : '';
+        const boton = b.boton_texto && enlace
+          ? `<a href="${esc(enlace)}"${externo} class="mt-8 inline-flex items-center gap-2 bg-brandGreen hover:bg-brandGreenLight text-black font-display font-extrabold text-lg px-8 py-4 uppercase tracking-wider shadow-neon-green transition-all transform hover:-translate-y-0.5">${esc(b.boton_texto)}</a>`
+          : '';
+        const foto = b.foto
+          ? `<img src="${esc(assetPath(b.foto))}" alt="${titulo || 'Foto de Retro Green Salón'}" loading="lazy" class="w-full h-full object-cover" />`
+          : '';
+        const encabezado = `<h2 class="font-display text-4xl sm:text-6xl font-black uppercase tracking-tight text-white leading-none mb-6">${titulo}${verde}</h2>`;
+
+        const s = document.createElement('section');
+        s.id = 'seccion-nueva-' + (i + 1);
+        s.className = `py-24 ${fondo} relative overflow-hidden border-b border-brandBorder`;
+        if (b.estilo === 'centrado') {
+          s.innerHTML = `
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              ${foto ? `<div class="mb-10 bg-black border-2 border-white/20 p-2 shadow-2xl h-[300px] sm:h-[420px]">${foto}</div>` : ''}
+              ${encabezado}${texto}${boton}
+            </div>`;
+        } else {
+          s.innerHTML = `
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <div class="${foto ? 'lg:col-span-7' : 'lg:col-span-12'} flex flex-col justify-center items-start">
+                  <span class="w-8 h-[2px] bg-brandGreen mb-5 block"></span>
+                  ${encabezado}${texto}${boton}
+                </div>
+                ${foto ? `<div class="lg:col-span-5 relative">
+                  <div class="absolute -inset-3 bg-brandGreen/20 border border-brandGreen/50 transform rotate-2 pointer-events-none"></div>
+                  <div class="relative bg-black border-2 border-white/20 p-2 shadow-2xl h-[420px]">${foto}</div>
+                </div>` : ''}
+              </div>
+            </div>`;
+        }
+        return s;
+      };
+
       const renderSecciones = lista => {
-        const filas = lista.filter(f => f && TODAS.includes(f.seccion));
+        const filas = lista.filter(f => f && (TODAS.includes(f.seccion) || f.type === 'nueva'));
         // A file with almost nothing in it would empty the page: better to leave it as it is.
         if (filas.length < 3) return;
         // The page footer, not the little one inside the history quote.
         const pie = document.querySelector('body > footer');
         const puestas = new Set();
-        filas.forEach(({ seccion, visible }) => {
+        let nuevas = 0;
+        filas.forEach(fila => {
+          const seVe = fila.visible !== false;
+          // Una sección escrita desde el panel: se arma y se cuelga en su lugar.
+          if (fila.type === 'nueva' || (!fila.seccion && (fila.titulo || fila.texto))) {
+            if (!seVe || !(fila.titulo || fila.texto || fila.foto)) return;
+            document.body.insertBefore(crearSeccion(fila, nuevas++), pie);
+            return;
+          }
+          const { seccion } = fila;
           if (puestas.has(seccion)) return;
           puestas.add(seccion);
           const el = document.getElementById(seccion);
           if (!el) return;
-          const seVe = visible !== false;
           el.hidden = !seVe;
           if (seVe) document.body.insertBefore(el, pie);
           document.querySelectorAll(`a[href="#${seccion}"]:not([data-fijo])`).forEach(a => {
