@@ -19,7 +19,7 @@ y cualquier texto de la página sin tocar código.
 | `datos/horarios.json` | Los días y horarios. |
 | `datos/textos.json` | Todos los textos de la página (títulos, servicios, dirección, WhatsApp, etc.). |
 | `img/` | Imágenes del sitio. Lo que sube el dueño desde el panel va a `img/subidas/`. |
-| `admin/` | El panel (Sveltia CMS), su configuración (`admin/config.yml`) y la vista previa. |
+| `admin/` | El panel (Sveltia CMS), su configuración (`admin/config.yml`) y la vista previa (`vista.css`, `vista.js`, `mapa.js`). |
 | `CNAME` | El dominio del sitio para GitHub Pages. |
 | `.nojekyll` | Le indica a GitHub que publique los archivos tal cual. No borrarlo. |
 
@@ -134,6 +134,9 @@ Solo pueden guardar cambios las cuentas con permiso de escritura en el repositor
 4. Tocar una foto → **subir una nueva** desde el celular o la compu. El panel la achica y la pasa a WebP.
 5. **Guardar**. En 1–2 minutos la web se actualiza sola.
 
+Desde el celular se usa igual: los campos quedan arriba y la página, abajo, en la ventanita de la
+vista previa.
+
 En **Secciones de la página** está la lista de las partes de la página, en el orden en que se ven.
 Ahí se hace todo:
 
@@ -147,9 +150,23 @@ Ahí se hace todo:
 Si el archivo se rompe o queda con menos de tres partes, la página se muestra completa, como está
 escrita en el HTML.
 
-**La vista previa.** Mientras se edita, a la derecha se ve la página como en un celular, ya puesta en
-la parte que se está tocando. Los textos se actualizan mientras se escribe, antes de guardar; las
-fotos y las listas se ven después de guardar. Se esconde con la ✕ y vuelve con “Ver la página”.
+**La vista previa.** Mientras se edita se ve la página de verdad, ya puesta en la parte que se está
+tocando: en la compu, en una columna a la derecha; en el celular, en una ventanita abajo.
+
+- **Nunca tapa los campos.** El panel se achica exactamente lo que mide la ventanita, así que lo que
+  se está escribiendo siempre queda a la vista, incluso con el teclado abierto.
+- **Cambia mientras se escribe.** Al tocar un campo, la vista salta a ese texto y lo marca con un
+  recuadro verde; lo que se escribe aparece al instante, antes de guardar. Si un campo se deja vacío,
+  la vista muestra el texto que ya estaba, igual que va a quedar la página.
+- **Parte por parte.** Arriba dice qué parte se está editando. Tocando ese nombre se abre la lista de
+  todas las partes de la página, con las apagadas marcadas, para ir a cualquiera de un toque.
+- **Prender y apagar se ve al toque.** En *Secciones de la página*, el interruptor prende y apaga la
+  parte en la vista en el momento, sin guardar.
+- **Fotos y listas.** Se ven después de guardar: el panel avisa y enciende el botón ⟳ para volver a
+  cargar la página cuando esté publicada.
+- **Se acomoda.** En el celular se arrastra la rayita de arriba (o se toca ⇕) para agrandarla o
+  achicarla, y queda del tamaño elegido para la próxima vez. Se esconde con la ✕ y vuelve con
+  “Ver la página”.
 
 En **Textos de la página** están todos los textos, agrupados por sección (portada, servicios, historia,
 ubicación, pie de página, etc.). Se tocan las flechitas para abrir cada grupo y se escribe encima.

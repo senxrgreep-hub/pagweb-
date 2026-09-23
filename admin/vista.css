@@ -1,0 +1,359 @@
+/* Vista previa del panel de Retro Green.
+   Muestra la web de verdad mientras se edita. Vive por fuera de Sveltia,
+   así que no puede romperlo.
+
+   En la compu: una columna a la derecha.
+   En el celular: una ventanita abajo que NO tapa los campos, porque el panel
+   se achica exactamente lo que mide la ventanita (y lo que mide el teclado). */
+
+:root {
+  --ancho-vista: 400px;  /* compu: ancho de la columna */
+  --alto-vista: 280px;   /* celular: alto de la ventanita (lo calcula vista.js) */
+  --teclado: 0px;        /* celular: alto del teclado, para no quedar tapada */
+  --vista-seguro: 0px;   /* celular: el borde de abajo de las pantallas con muesca */
+  --alto-pantalla: 100vh;/* lo que mide la pantalla de verdad (lo calcula vista.js) */
+  --vista-fondo: #14181d;
+  --vista-barra: #1c2128;
+  --vista-linea: #3a4250;
+  --vista-texto: #e6e9ee;
+  --vista-suave: #9aa4b2;
+  --vista-verde: #22c55e;
+}
+
+#vista,
+#vista-abrir {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#vista {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  width: var(--ancho-vista);
+  z-index: 2147483000;
+  background: var(--vista-fondo);
+  border-left: 1px solid var(--vista-linea);
+  display: none;
+  flex-direction: column;
+  color: var(--vista-texto);
+  overscroll-behavior: contain;
+}
+
+#vista.se-ve {
+  display: flex;
+}
+
+/* ---- Barra de arriba ---- */
+
+#vista-agarre {
+  display: none;
+}
+
+#vista-barra {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 7px 8px;
+  background: var(--vista-barra);
+  border-bottom: 1px solid var(--vista-linea);
+  font-size: 12px;
+  flex: none;
+}
+
+#vista-titulo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+  padding: 6px 7px;
+  background: none;
+  border: 0;
+  border-radius: 6px;
+  color: var(--vista-texto);
+  font: inherit;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+#vista-titulo > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#vista-titulo::after {
+  content: "▾";
+  flex: none;
+  color: var(--vista-suave);
+  font-size: 10px;
+  transition: transform .15s ease;
+}
+
+#vista[data-lista="si"] #vista-titulo::after {
+  transform: rotate(180deg);
+}
+
+#vista-barra button,
+#vista-barra a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  min-width: 32px;
+  min-height: 32px;
+  background: none;
+  border: 0;
+  color: var(--vista-suave);
+  font-size: 15px;
+  line-height: 1;
+  padding: 0 6px;
+  cursor: pointer;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+#vista-barra button:hover,
+#vista-barra a:hover,
+#vista-titulo:hover {
+  background: #333a45;
+  color: #fff;
+}
+
+/* El botón de recargar se enciende cuando hay algo guardado para ver. */
+#vista-recargar.hay-cambios {
+  color: #0b1220;
+  background: var(--vista-verde);
+  animation: vista-latido 1.6s ease-in-out infinite;
+}
+
+@keyframes vista-latido {
+  50% { opacity: .55; }
+}
+
+#vista-tamano {
+  display: none;
+}
+
+/* ---- Lista para saltar a cualquier parte de la página ---- */
+
+#vista-secciones {
+  position: absolute;
+  top: 100%;
+  left: 6px;
+  right: 6px;
+  z-index: 3;
+  margin-top: 4px;
+  max-height: 58vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--vista-barra);
+  border: 1px solid var(--vista-linea);
+  border-radius: 10px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, .55);
+  padding: 5px;
+}
+
+#vista-secciones[hidden] {
+  display: none;
+}
+
+#vista-secciones button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 42px;
+  padding: 9px 10px;
+  background: none;
+  border: 0;
+  border-radius: 7px;
+  color: var(--vista-texto);
+  font: inherit;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+}
+
+#vista-secciones button:hover {
+  background: #333a45;
+}
+
+#vista-secciones button[aria-current="true"] {
+  background: rgba(34, 197, 94, .16);
+  color: #fff;
+  font-weight: 600;
+}
+
+#vista-secciones .apagada {
+  opacity: .5;
+}
+
+#vista-secciones .marca {
+  flex: none;
+  font-size: 10px;
+  color: var(--vista-suave);
+  border: 1px solid var(--vista-linea);
+  border-radius: 999px;
+  padding: 1px 7px;
+  margin-left: auto;
+}
+
+/* ---- La página adentro ---- */
+
+#vista-cabecera {
+  position: relative;
+  flex: none;
+}
+
+#vista-marco {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+#vista-marco iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+#vista-pie {
+  flex: none;
+  margin: 0;
+  padding: 7px 10px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--vista-suave);
+  border-top: 1px solid var(--vista-linea);
+  background: var(--vista-barra);
+}
+
+#vista-pie.aviso {
+  color: #d7f7e3;
+  background: #14351f;
+}
+
+/* ---- Botón para volver a abrirla ---- */
+
+#vista-abrir {
+  position: fixed;
+  right: 14px;
+  bottom: calc(14px + var(--teclado) + var(--vista-seguro));
+  z-index: 2147483000;
+  background: #2563eb;
+  color: #fff;
+  border: 0;
+  border-radius: 999px;
+  padding: 11px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, .5);
+  display: none;
+}
+
+#vista-abrir.se-ve {
+  display: block;
+}
+
+/* ---------------- Celular y tablet ---------------- */
+
+@media (max-width: 1100px) {
+  #vista {
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: var(--teclado);
+    width: auto;
+    height: calc(var(--alto-vista) + var(--vista-seguro));
+    padding-bottom: var(--vista-seguro);
+    border-left: 0;
+    border-top: 1px solid var(--vista-linea);
+    border-radius: 14px 14px 0 0;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, .55);
+  }
+
+  /* La rayita de arriba: se arrastra para agrandar o achicar la ventanita. */
+  #vista-agarre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    height: 22px;
+    cursor: ns-resize;
+    touch-action: none;
+  }
+
+  #vista-agarre::before {
+    content: "";
+    width: 42px;
+    height: 4px;
+    border-radius: 999px;
+    background: #4b5563;
+  }
+
+  #vista.moviendo {
+    transition: none;
+    user-select: none;
+  }
+
+  #vista-barra {
+    padding: 4px 8px 8px;
+    border-bottom: 1px solid var(--vista-linea);
+    font-size: 13px;
+  }
+
+  /* Dedos, no mouse: todo más grande. */
+  #vista-barra button,
+  #vista-barra a {
+    min-width: 40px;
+    min-height: 40px;
+    font-size: 17px;
+  }
+
+  #vista-titulo {
+    min-height: 40px;
+    font-size: 13px;
+  }
+
+  #vista-tamano {
+    display: flex;
+  }
+
+  /* La ventanita está abajo de todo, así que la lista se abre hacia arriba
+     y nunca más alta que el lugar que queda libre. */
+  #vista-secciones {
+    top: auto;
+    bottom: 100%;
+    margin: 0 0 6px;
+    max-height: calc(var(--alto-pantalla) - var(--alto-vista) - var(--teclado) - 24px);
+  }
+
+  #vista-pie {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+
+  #vista-abrir {
+    right: 12px;
+    bottom: calc(12px + var(--teclado) + var(--vista-seguro));
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+}
+
+/* Pantallas muy bajas (celular acostado): el pie de ayuda sobra. */
+@media (max-width: 1100px) and (max-height: 520px) {
+  #vista-pie:not(.aviso) {
+    display: none;
+  }
+}
