@@ -1203,7 +1203,13 @@
     (() => {
       const loadJSON = path => fetch(path, { cache: 'no-cache' }).then(r => (r.ok ? r.json() : null)).catch(() => null);
       // The panel stores paths like "/img/subidas/foto.webp"; make them relative so they also work under /repo/ on github.io.
-      const assetPath = p => (/^(https?:|data:)/.test(p) ? p : String(p).replace(/^\//, ''));
+      // The name of the file is whatever the owner uploaded, so each part is encoded: a "#" or a "?" in the
+      // middle of the name would otherwise cut the address and leave the photo out.
+      const trozo = s => { try { return encodeURIComponent(decodeURIComponent(s)); } catch { return encodeURIComponent(s); } };
+      const assetPath = p => {
+        const ruta = String(p ?? '');
+        return /^(https?:|data:)/.test(ruta) ? ruta : ruta.replace(/^\//, '').split('/').map(trozo).join('/');
+      };
       const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
       // Same collage rhythm as the original gallery: wide/narrow, then wider/narrower, repeating.
