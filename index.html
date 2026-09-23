@@ -1321,10 +1321,17 @@
         });
       };
 
-      Promise.all([loadJSON('datos/fotos.json'), loadJSON('datos/galeria.json'), loadJSON('datos/horarios.json'), loadJSON('datos/textos.json'), loadJSON('datos/secciones.json')])
-        .then(([fotos, galeria, horarios, textos, secciones]) => {
+      Promise.all([loadJSON('datos/fotos.json'), loadJSON('datos/galeria.json'), loadJSON('datos/horarios.json'),
+                   loadJSON('datos/textos.json'), loadJSON('datos/secciones.json'), loadJSON('datos/contacto.json')])
+        .then(([fotos, galeria, horarios, textos, secciones, contacto]) => {
           if (secciones && Array.isArray(secciones.secciones)) renderSecciones(secciones.secciones);
-          if (textos) renderTextos(textos);
+          // El teléfono, el Instagram y la dirección se editan en su propia pantalla del panel,
+          // así que pisan lo que hubiera quedado escrito en textos.json.
+          if (textos || contacto) {
+            const conContacto = { ...(textos || {}) };
+            if (contacto) conContacto.ubicacion = { ...(conContacto.ubicacion || {}), ...contacto };
+            renderTextos(conContacto);
+          }
           if (fotos) {
             document.querySelectorAll('[data-foto]').forEach(img => {
               const src = fotos[img.dataset.foto];
@@ -1333,7 +1340,7 @@
           }
           if (galeria && Array.isArray(galeria.fotos) && galeria.fotos.length) renderGaleria(galeria.fotos);
           if (horarios && Array.isArray(horarios.filas) && horarios.filas.length) renderHorarios(horarios.filas);
-          document.documentElement.dataset.contenido = fotos || galeria || horarios || textos || secciones ? 'panel' : 'html';
+          document.documentElement.dataset.contenido = fotos || galeria || horarios || textos || secciones || contacto ? 'panel' : 'html';
         });
     })();
   </script>

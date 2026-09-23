@@ -5,9 +5,178 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
     <title>Panel · Retro Green Salón</title>
+    <style>
+      /* Recuadro propio: muestra la parte de la página que se está editando.
+         Vive por fuera del panel, así que no puede romperlo. */
+      #guia {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        z-index: 2147483000;
+        width: 320px;
+        max-width: calc(100vw - 32px);
+        background: #1b1f24;
+        border: 1px solid #3a4250;
+        border-radius: 10px;
+        box-shadow: 0 12px 36px rgba(0, 0, 0, .55);
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        color: #e6e9ee;
+        overflow: hidden;
+        display: none;
+      }
+      #guia.se-ve { display: block; }
+      #guia-barra {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 10px;
+        background: #232830;
+        border-bottom: 1px solid #3a4250;
+        font-size: 12px;
+      }
+      #guia-titulo { flex: 1; font-weight: 600; letter-spacing: .01em; }
+      #guia-barra button {
+        background: none;
+        border: 0;
+        color: #9aa4b2;
+        font-size: 15px;
+        line-height: 1;
+        padding: 4px 6px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      #guia-barra button:hover { background: #333a45; color: #fff; }
+      #guia-imagen {
+        display: block;
+        width: 100%;
+        max-height: 340px;
+        object-fit: contain;
+        object-position: top;
+        background: #0c0e11;
+      }
+      #guia-pie { padding: 7px 10px; font-size: 11px; color: #9aa4b2; }
+      #guia-abrir {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        z-index: 2147483000;
+        background: #232830;
+        color: #e6e9ee;
+        border: 1px solid #3a4250;
+        border-radius: 999px;
+        padding: 9px 14px;
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        font-size: 12px;
+        cursor: pointer;
+        box-shadow: 0 8px 22px rgba(0, 0, 0, .5);
+        display: none;
+      }
+      #guia-abrir.se-ve { display: block; }
+      @media (max-width: 900px) {
+        #guia, #guia-abrir { display: none !important; }
+      }
+    </style>
   </head>
   <body>
     <!-- Sveltia CMS: reads admin/config.yml and signs in with GitHub. -->
     <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+
+    <div id="guia" role="complementary" aria-label="Parte de la página que estás editando">
+      <div id="guia-barra">
+        <span id="guia-titulo">Estás editando</span>
+        <button type="button" id="guia-cerrar" title="Esconder">✕</button>
+      </div>
+      <img id="guia-imagen" alt="" />
+      <div id="guia-pie">Así se ve hoy en la web.</div>
+    </div>
+    <button type="button" id="guia-abrir">Ver qué estoy editando</button>
+
+    <script>
+      // Muestra una foto de la parte de la página que se está editando.
+      // Solo mira la dirección y los clics; no toca nada del panel.
+      (() => {
+        const CAJA = document.getElementById('guia');
+        const BOTON = document.getElementById('guia-abrir');
+        const TITULO = document.getElementById('guia-titulo');
+        const IMAGEN = document.getElementById('guia-imagen');
+
+        // Cada pantalla del panel con su foto.
+        const PANTALLAS = {
+          contacto: ['ubicacion', 'Teléfono y ubicación'],
+          fotos: ['hero', 'Fotos principales'],
+          galeria: ['galeria', 'Galería del salón'],
+          horarios: ['horarios', 'Horarios'],
+        };
+        // Cada grupo de "Textos de la página" con su foto.
+        const GRUPOS = [
+          ['título y descripción', 'hero', 'Título en Google y en la pestaña'],
+          ['nombre del salón', 'encabezado', 'Nombre del salón (logo)'],
+          ['menú de arriba', 'encabezado', 'Menú de arriba'],
+          ['portada', 'hero', 'Portada'],
+          ['más que una peluquería', 'nosotros', 'Más que una experiencia'],
+          ['nuestros servicios', 'servicios', 'Nuestros servicios'],
+          ['historia', 'historia', 'Historia'],
+          ['no es solo un corte', 'experiencia', 'No es solo un corte'],
+          ['juegos y películas', 'clasicos', 'Juegos y películas clásicas'],
+          ['galería', 'galeria', 'Galería del salón'],
+          ['ubicación, horarios', 'ubicacion', 'Ubicación, horarios y contacto'],
+          ['sacamos turno', 'contacto', 'Botones del final'],
+          ['pie de página', 'pie', 'Pie de página'],
+        ];
+
+        let escondida = false;
+        try { escondida = localStorage.getItem('guia-escondida') === '1'; } catch {}
+
+        const pintar = (imagen, titulo) => {
+          if (!imagen) { CAJA.classList.remove('se-ve'); BOTON.classList.remove('se-ve'); return; }
+          if (IMAGEN.getAttribute('src') !== 'ayuda/' + imagen + '.webp') {
+            IMAGEN.src = 'ayuda/' + imagen + '.webp';
+            IMAGEN.alt = 'Foto de la sección ' + titulo;
+          }
+          TITULO.textContent = 'Estás editando: ' + titulo;
+          CAJA.classList.toggle('se-ve', !escondida);
+          BOTON.classList.toggle('se-ve', escondida);
+        };
+
+        // Qué pantalla está abierta, según la dirección del navegador.
+        const dePantalla = () => {
+          const m = location.hash.match(/entries\/([^/?#]+)/);
+          return m && PANTALLAS[m[1]] ? PANTALLAS[m[1]] : null;
+        };
+
+        let ultimoGrupo = null;
+        const actualizar = () => {
+          const enTextos = /entries\/textos/.test(location.hash);
+          if (enTextos && ultimoGrupo) return pintar(ultimoGrupo[1], ultimoGrupo[2]);
+          const p = dePantalla();
+          pintar(p ? p[0] : null, p ? p[1] : '');
+        };
+
+        // Al tocar el título de un grupo dentro de "Textos", cambia la foto.
+        document.addEventListener('click', e => {
+          const camino = (e.composedPath && e.composedPath()) || [];
+          for (const nodo of camino) {
+            const t = (nodo && nodo.textContent || '').trim().toLowerCase();
+            if (!t || t.length > 70) continue;
+            const grupo = GRUPOS.find(g => t.includes(g[0]));
+            if (grupo) { ultimoGrupo = grupo; actualizar(); return; }
+          }
+        }, true);
+
+        addEventListener('hashchange', () => { ultimoGrupo = null; actualizar(); });
+        document.getElementById('guia-cerrar').addEventListener('click', () => {
+          escondida = true;
+          try { localStorage.setItem('guia-escondida', '1'); } catch {}
+          actualizar();
+        });
+        BOTON.addEventListener('click', () => {
+          escondida = false;
+          try { localStorage.removeItem('guia-escondida'); } catch {}
+          actualizar();
+        });
+        setInterval(actualizar, 1200);
+        actualizar();
+      })();
+    </script>
   </body>
 </html>

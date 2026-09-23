@@ -59,6 +59,33 @@ collections:
                 widget: boolean
                 default: true
 
+      - name: contacto
+        label: Teléfono y ubicación
+        file: datos/contacto.json
+        description: "El número de WhatsApp, el Instagram y la dirección del salón. Cambian en toda la página y también en los botones."
+        fields:
+          - label: "Número de WhatsApp"
+            name: whatsapp_numero
+            widget: string
+            required: false
+            hint: "Cambia el número que se ve y los 14 botones de reservar. Con el código del país, como +54 9 11 5975-8218."
+            pattern: ['^\+?\s*54[\s\-()0-9]{10,18}$', 'Escribilo con el código del país, por ejemplo: +54 9 11 5975-8218']
+          - label: "Usuario de Instagram"
+            name: instagram_usuario
+            widget: string
+            required: false
+            hint: "Cambia el usuario que se ve y los enlaces al perfil. Se puede pegar la dirección completa del perfil."
+            pattern: ['^\s*(@?[A-Za-z0-9._]{1,30}|https?://(www\.)?instagram\.com/[^/?#\s]+.*)\s*$', 'Escribí el usuario (por ejemplo @retrogreen_salonn) o pegá el enlace del perfil']
+          - label: "Dirección del salón"
+            name: direccion
+            widget: string
+            required: false
+            hint: "La calle y el número. Junto con la ciudad arma el enlace a Google Maps."
+          - label: "Ciudad"
+            name: ciudad
+            widget: string
+            required: false
+
       - name: fotos
         label: Fotos principales
         file: datos/fotos.json
@@ -618,15 +645,6 @@ collections:
                 name: direccion_etiqueta
                 widget: string
                 required: false
-              - label: "Dirección del salón (también cambia el enlace a Google Maps)"
-                name: direccion
-                widget: string
-                required: false
-                hint: "La calle y el número, como Av. Emilio Caraffa 2086. Junto con la ciudad arma el enlace al mapa."
-              - label: "Ciudad"
-                name: ciudad
-                widget: string
-                required: false
               - label: "Palabra “Horarios”"
                 name: horarios_etiqueta
                 widget: string
@@ -635,22 +653,10 @@ collections:
                 name: whatsapp_etiqueta
                 widget: string
                 required: false
-              - label: "Número de WhatsApp (cambia también todos los botones de reservar)"
-                name: whatsapp_numero
-                widget: string
-                required: false
-                hint: "Con el código del país, como +54 9 11 5975-8218. Si se escribe de otra forma, los botones siguen con el número anterior."
-                pattern: ['^\+?\s*54[\s\-()0-9]{10,18}$', 'Escribilo con el código del país, por ejemplo: +54 9 11 5975-8218']
               - label: "Palabra “Instagram”"
                 name: instagram_etiqueta
                 widget: string
                 required: false
-              - label: "Usuario de Instagram (cambia también el enlace)"
-                name: instagram_usuario
-                widget: string
-                required: false
-                hint: "El usuario, como @retrogreen_salonn. También se puede pegar la dirección completa del perfil."
-                pattern: ['^\s*(@?[A-Za-z0-9._]{1,30}|https?://(www\.)?instagram\.com/[^/?#\s]+.*)\s*$', 'Escribí el usuario (por ejemplo @retrogreen_salonn) o pegá el enlace del perfil']
               - label: "Botón “Cómo llegar”"
                 name: boton_mapa
                 widget: string

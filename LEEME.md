@@ -15,6 +15,7 @@ y cualquier texto de la página sin tocar código.
 | `datos/fotos.json` | Las 5 fotos principales (portada, secciones, arcade, afiches). |
 | `datos/galeria.json` | Las fotos de la galería, con etiqueta, título y descripción. |
 | `datos/secciones.json` | Qué partes de la página se muestran y en qué orden. |
+| `datos/contacto.json` | El WhatsApp, el Instagram y la dirección del salón. |
 | `datos/horarios.json` | Los días y horarios. |
 | `datos/textos.json` | Todos los textos de la página (títulos, servicios, dirección, WhatsApp, etc.). |
 | `img/` | Imágenes del sitio. Lo que sube el dueño desde el panel va a `img/subidas/`. |
@@ -128,8 +129,8 @@ Solo pueden guardar cambios las cuentas con permiso de escritura en el repositor
 
 1. Entrar a <https://peluqueriagreen.com/admin/> (también está el enlace **Acceso dueño** al pie de la página).
 2. **Iniciar sesión con GitHub**.
-3. **Contenido del sitio** → elegir **Secciones de la página**, **Fotos principales**, **Galería**,
-   **Horarios** o **Textos de la página**.
+3. **Contenido del sitio** → elegir **Secciones de la página**, **Teléfono y ubicación**,
+   **Fotos principales**, **Galería**, **Horarios** o **Textos de la página**.
 4. Tocar una foto → **subir una nueva** desde el celular o la compu. El panel la achica y la pasa a WebP.
 5. **Guardar**. En 1–2 minutos la web se actualiza sola.
 
@@ -143,11 +144,17 @@ En **Textos de la página** están todos los textos, agrupados por sección (por
 ubicación, pie de página, etc.). Se tocan las flechitas para abrir cada grupo y se escribe encima.
 Tres campos hacen algo más que cambiar el texto:
 
+En **Teléfono y ubicación** están los datos de contacto, que cambian en toda la página a la vez:
+
 | Campo | Qué cambia además | Cómo se escribe |
 |---|---|---|
-| Ubicación → *Número de WhatsApp* | Todos los botones de reservar y consultar. | Con el código del país: `+54 9 11 5975-8218`. |
-| Ubicación → *Usuario de Instagram* | Los enlaces al perfil de Instagram. | `@retrogreen_salonn`, o pegando el enlace del perfil. |
-| Ubicación → *Dirección* y *Ciudad* | Los enlaces a Google Maps. | Como se escribe normalmente. |
+| *Número de WhatsApp* | Los 14 botones de reservar y consultar. | Con el código del país: `+54 9 11 5975-8218`. |
+| *Usuario de Instagram* | Los enlaces al perfil de Instagram. | `@retrogreen_salonn`, o pegando el enlace del perfil. |
+| *Dirección* y *Ciudad* | Los enlaces a Google Maps. | Como se escribe normalmente. |
+
+Mientras se edita, abajo a la derecha aparece un recuadro con la foto de la parte de la página que se
+está tocando. Se esconde con la ✕ y vuelve con el botón “Ver qué estoy editando”. Las fotos están en
+`admin/ayuda/`: si el diseño cambia mucho, conviene sacarlas de nuevo.
 
 Si un texto se deja vacío, la página usa el que ya tenía. El diseño, los colores y las secciones no se
 tocan desde el panel: para eso hay que pedirle un cambio a Martín.
