@@ -1,6 +1,12 @@
 {
   "fotos": [
     {
+      "imagen": "/img/subidas/1000065111.webp",
+      "etiqueta": "Barbero",
+      "titulo": "Pedro",
+      "descripcion": "Barbero con experiencia hace 2 años. Nuevo compañero en Retro Green"
+    },
+    {
       "imagen": "https://lh3.googleusercontent.com/aida-public/AB6AXuAeJUABve59ZML_h-qtdwJ5eJZg7IIst52WoleshCwqkb9SSbs5Gzz9i92-e-3nO1yrjZaaPq_diXp7qJQVu9RhqM14kmujn0EJh53Bz2kJLzRu-SbfCOP8cJnkJIjuns8jI4qKV2gsfB4lErN0UYj4Hanzvx2vWN6r777OcXZZN6o6vogM7ha7esJXICOAKizydWfSEa9-zOm2p6YFwWaVPli3Q6iNOyz6DW--x61ybZCRwqX774N4Hw",
       "etiqueta": "Wall of Fame",
       "titulo": "POSTERS, VINILOS & PUNK",
