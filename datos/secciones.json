@@ -7,8 +7,8 @@
     },
     {
       "type": "fija",
-      "seccion": "nosotros",
-      "visible": false
+      "seccion": "historia",
+      "visible": true
     },
     {
       "type": "fija",
@@ -17,8 +17,8 @@
     },
     {
       "type": "fija",
-      "seccion": "historia",
-      "visible": true
+      "seccion": "nosotros",
+      "visible": false
     },
     {
       "type": "fija",
