@@ -22,11 +22,6 @@
     },
     {
       "type": "fija",
-      "seccion": "experiencia",
-      "visible": true
-    },
-    {
-      "type": "fija",
       "seccion": "galeria",
       "visible": true
     },
@@ -44,6 +39,17 @@
       "type": "fija",
       "seccion": "clasicos",
       "visible": true
+    },
+    {
+      "type": "nueva",
+      "visible": true,
+      "titulo": "Nuestros cuadros",
+      "titulo_verde": "Personalizados",
+      "texto": "También tenemos a la venta cuadros Retro exhibidos a pedido\nMedidas 45x30",
+      "foto": "/img/subidas/img_2332.webp",
+      "estilo": "texto_foto",
+      "boton_texto": "",
+      "boton_enlace": ""
     }
   ]
 }
