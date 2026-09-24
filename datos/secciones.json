@@ -46,10 +46,15 @@
       "titulo": "Nuestros cuadros",
       "titulo_verde": "Personalizados",
       "texto": "También tenemos a la venta cuadros Retro exhibidos a pedido\nMedidas 45x30",
-      "foto": "/img/subidas/img_2332.webp",
+      "fotos": [
+        "/img/subidas/img_2331.webp",
+        "/img/subidas/img_2333.webp",
+        "/img/subidas/img_2334.webp"
+      ],
       "estilo": "texto_foto",
       "boton_texto": "",
-      "boton_enlace": ""
+      "boton_enlace": "",
+      "foto": "/img/subidas/img_2332.webp"
     }
   ]
 }
