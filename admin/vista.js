@@ -86,10 +86,14 @@
   const leer = k => { try { return localStorage.getItem(k); } catch { return null; } };
 
   const esChico = () => matchMedia('(max-width: 1100px)').matches;
+  // La vista previa solo tiene sentido editando. En la pantalla de inicio de
+  // sesión se esconde entera, para no comerle lugar a los botones de entrar.
+  const enEdicion = () => /#\/collections\//.test(location.hash);
   const doc = () => { try { return MARCO.contentDocument; } catch { return null; } };
   const ventana = () => { try { return MARCO.contentWindow; } catch { return null; } };
 
   let abierta = leer('vista-cerrada') !== '1';
+  let visible = false;                               // abierta y con algo para mostrar
   let parte = Number(leer('vista-alto')) || 0.42;   // cuánto de la pantalla ocupa en el celular
   let teclado = 0;                                   // alto del teclado del celular
   let seguro = 0;                                    // borde de abajo de los celulares con muesca
@@ -132,13 +136,21 @@
   /* ---------- Acomodar el panel para que no quede tapado ---------- */
 
   const puestos = new WeakMap();
-  const propios = new Set([VISTA, ABRIR]);
+  const propios = new Set([VISTA, ABRIR, document.getElementById('arranque')]);
 
   // Se pone como "important" para que ninguna regla del panel pueda ganarle:
-  // el lugar que le dejamos a la vista previa no se negocia.
+  // el lugar que le dejamos a la vista previa no se negocia. Al soltarlo, se
+  // devuelve el valor que el panel tenía escrito, si tenía: borrar a lo bruto
+  // le sacaba, por ejemplo, el "right: 0" que venía de su propio "inset: 0".
+  const antesDeTocar = new WeakMap();
   const poner = (el, prop, valor) => {
-    if (valor) el.style.setProperty(prop, valor, 'important');
-    else el.style.removeProperty(prop);
+    let previo = antesDeTocar.get(el);
+    if (!previo) { previo = {}; antesDeTocar.set(el, previo); }
+    if (!(prop in previo)) previo[prop] = [el.style.getPropertyValue(prop), el.style.getPropertyPriority(prop)];
+    if (valor) { el.style.setProperty(prop, valor, 'important'); return; }
+    const [suyo, prioridad] = previo[prop];
+    el.style.removeProperty(prop);
+    if (suyo) el.style.setProperty(prop, suyo, prioridad);
   };
 
   const ajustar = (el, ancho, derecha, alto) => {
@@ -149,6 +161,9 @@
     poner(el, 'right', derecha);
     poner(el, 'height', alto);
     poner(el, 'max-height', alto);
+    // Si al panel no le entra todo, que se pueda desplazar: su raíz viene con
+    // "overflow: hidden" y sin esto quedarían botones abajo, inalcanzables.
+    poner(el, 'overflow-y', alto ? 'auto' : '');
     // El alto que le damos tiene que ser el de afuera: si no, un panel con
     // márgenes internos queda más alto de lo pedido y se mete abajo de la vista.
     poner(el, 'box-sizing', ancho || alto ? 'border-box' : '');
@@ -162,21 +177,23 @@
     raiz.style.setProperty('--vista-seguro', seguro + 'px');
     raiz.style.setProperty('--alto-pantalla', (window.innerHeight || 640) + 'px');
 
-    VISTA.classList.toggle('se-ve', abierta);
-    if (ABRIR) ABRIR.classList.toggle('se-ve', !abierta);
-    if (!abierta) cerrarLista();
+    const editando = enEdicion();
+    visible = abierta && editando;
+    VISTA.classList.toggle('se-ve', visible);
+    if (ABRIR) ABRIR.classList.toggle('se-ve', !abierta && editando);
+    if (!visible) cerrarLista();
 
     // Cuánto lugar le queda al panel: se mide dónde empieza la ventanita en vez
     // de calcularlo. Los navegadores del celular cuentan el alto de la pantalla
     // de dos maneras distintas (por la barra de arriba que aparece y desaparece),
     // y con una cuenta el panel quedaba unos pixeles por debajo de la ventanita.
-    const tope = abierta && chico ? Math.max(140, Math.round(VISTA.getBoundingClientRect().top)) : 0;
+    const tope = visible && chico ? Math.max(140, Math.round(VISTA.getBoundingClientRect().top)) : 0;
 
     // El panel de Sveltia se corre (compu) o se achica (celular) para dejarle
     // el lugar a la vista previa. Nunca la vista previa tapa los campos.
     for (const el of document.body.children) {
       if (propios.has(el) || el.tagName === 'SCRIPT' || el.tagName === 'LINK' || el.tagName === 'STYLE') continue;
-      if (!abierta) ajustar(el, '', '', '');
+      if (!visible) ajustar(el, '', '', '');
       else if (chico) ajustar(el, '', '', tope + 'px');
       else ajustar(el, 'calc(100% - var(--ancho-vista))', getComputedStyle(el).position === 'fixed' ? 'var(--ancho-vista)' : '', '');
     }
@@ -337,7 +354,7 @@
     const pedido = nombre + '|' + seccion;
     if (pedido !== destino) {
       destino = pedido;
-      if (abierta && !saltar) { ultimaClave = null; irA(seccion); }
+      if (visible && !saltar) { ultimaClave = null; irA(seccion); }
     }
   };
 
@@ -411,13 +428,13 @@
     const clave = resolver(camino);
     if (!clave) return;
     escribir(clave, campo.value);
-    if (abierta) mostrarCambio(clave);
+    if (visible) mostrarCambio(clave);
   }, true);
 
   // Con solo tocar un campo, la vista se va a ese texto. Así se ve en qué
   // parte de la página se está trabajando antes de escribir nada.
   document.addEventListener('focusin', e => {
-    if (!abierta) return;
+    if (!visible) return;
     const camino = (e.composedPath && e.composedPath()) || [e.target];
     if (!camino.some(n => n && typeof n.value === 'string')) return;
     const clave = resolver(camino);

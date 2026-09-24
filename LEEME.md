@@ -19,7 +19,7 @@ y cualquier texto de la página sin tocar código.
 | `datos/horarios.json` | Los días y horarios. |
 | `datos/textos.json` | Todos los textos de la página (títulos, servicios, dirección, WhatsApp, etc.). |
 | `img/` | Imágenes del sitio. Lo que sube el dueño desde el panel va a `img/subidas/`. |
-| `admin/` | El panel (Sveltia CMS), su configuración (`admin/config.yml`) y la vista previa (`vista.css`, `vista.js`, `mapa.js`). |
+| `admin/` | El panel: `sveltia-cms.js` (el programa del panel), su configuración (`admin/config.yml`) y la vista previa (`vista.css`, `vista.js`, `mapa.js`). |
 | `CNAME` | El dominio del sitio para GitHub Pages. |
 | `.nojekyll` | Le indica a GitHub que publique los archivos tal cual. No borrarlo. |
 
@@ -123,6 +123,26 @@ En `admin/config.yml`, reemplazar
 Solo pueden guardar cambios las cuentas con permiso de escritura en el repositorio
 (el dueño y los colaboradores). Cualquier otra persona que entre a `/admin` no pasa del inicio de sesión.
 
+### 6.5 · El programa del panel vive acá adentro
+
+El panel es Sveltia CMS. Antes se bajaba de internet (`unpkg.com`) cada vez que se abría, y si esa
+dirección no se podía alcanzar —pasa con algunos operadores de celular— la pantalla quedaba **en
+negro, sin decir nada**. Ahora el archivo está guardado en `admin/sveltia-cms.js` y se usa el del
+sitio; las copias de internet quedaron solo como respaldo, y si nada carga aparece un cartel que
+explica qué pasó en vez de una pantalla vacía.
+
+Para actualizarlo más adelante (no hace falta seguido), se baja la última versión y se reemplaza
+ese archivo:
+
+```bash
+npm pack @sveltia/cms
+tar xzf sveltia-cms-*.tgz
+cp package/dist/sveltia-cms.js admin/sveltia-cms.js
+```
+
+Conviene cambiar también el número de versión de las dos copias de respaldo en `admin/index.html`,
+y abrir el panel una vez para comprobar que entra bien antes de dar por buena la actualización.
+
 ---
 
 ## Cómo usa el panel el dueño
@@ -167,6 +187,8 @@ tocando: en la compu, en una columna a la derecha; en el celular, en una ventani
 - **Se acomoda.** En el celular se arrastra la rayita de arriba (o se toca ⇕) para agrandarla o
   achicarla, y queda del tamaño elegido para la próxima vez. Se esconde con la ✕ y vuelve con
   “Ver la página”.
+- **Aparece solo cuando hace falta.** En la pantalla de inicio de sesión no se muestra: ahí el panel
+  usa toda la pantalla, para que los botones de entrar queden cómodos.
 
 En **Textos de la página** están todos los textos, agrupados por sección (portada, servicios, historia,
 ubicación, pie de página, etc.). Se tocan las flechitas para abrir cada grupo y se escribe encima.

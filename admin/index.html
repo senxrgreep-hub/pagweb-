@@ -6,11 +6,144 @@
     <meta name="robots" content="noindex, nofollow" />
     <meta name="theme-color" content="#14181d" />
     <title>Panel · Retro Green Salón</title>
+
+    <!-- Pantalla de arranque. Va acá adentro a propósito: si no se pudiera
+         descargar ningún archivo, este cartel igual se ve y explica qué pasa.
+         Antes, cuando el panel no cargaba, la pantalla quedaba en negro sin
+         decir nada. -->
+    <style>
+      #arranque {
+        position: fixed;
+        inset: 0;
+        z-index: 2147483600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        background: #0d1014;
+        color: #e6e9ee;
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        text-align: center;
+      }
+      #arranque[hidden] { display: none; }
+      #arranque .caja { max-width: 420px; }
+      #arranque .marca { font-size: 22px; font-weight: 700; letter-spacing: .04em; margin: 0 0 22px; }
+      #arranque .marca b { color: #22c55e; }
+      #arranque-texto { font-size: 16px; line-height: 1.5; margin: 0 0 10px; }
+      #arranque-detalle {
+        margin: 0 0 18px;
+        font-size: 12px;
+        line-height: 1.5;
+        color: #9aa4b2;
+        word-break: break-word;
+      }
+      #arranque-detalle:empty { display: none; }
+      #arranque button {
+        display: none;
+        min-height: 46px;
+        margin: 0 auto 18px;
+        padding: 12px 26px;
+        background: #22c55e;
+        color: #08120b;
+        border: 0;
+        border-radius: 999px;
+        font: inherit;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      #arranque button.se-ve { display: block; }
+      #arranque .ayuda { font-size: 12px; line-height: 1.6; color: #6b7280; margin: 0; }
+      #arranque .puntos::after {
+        content: "";
+        animation: arranque-puntos 1.4s steps(4, end) infinite;
+      }
+      @keyframes arranque-puntos {
+        0% { content: ""; } 25% { content: "."; } 50% { content: ".."; } 75% { content: "..."; }
+      }
+    </style>
     <link rel="stylesheet" href="vista.css" />
   </head>
   <body>
-    <!-- Sveltia CMS: lee admin/config.yml y entra con la cuenta de GitHub. -->
-    <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+    <div id="arranque">
+      <div class="caja">
+        <p class="marca">Retro <b>GREEN</b></p>
+        <p id="arranque-texto"><span class="puntos">Abriendo el panel</span></p>
+        <p id="arranque-detalle"></p>
+        <button type="button" id="arranque-reintentar">Reintentar</button>
+        <p class="ayuda">Si no abre, probá con otra conexión (datos en vez de wifi, o al revés).
+          El panel necesita descargar un archivo grande la primera vez.</p>
+      </div>
+    </div>
+
+    <!-- El panel (Sveltia CMS) se carga desde este mismo repositorio, así no
+         depende de que el celular pueda entrar a un servidor de afuera. Si por
+         lo que sea el archivo no estuviera, se intenta con dos copias en
+         internet antes de darse por vencido. -->
+    <script>
+      (() => {
+        const COPIAS = [
+          'sveltia-cms.js',
+          'https://cdn.jsdelivr.net/npm/@sveltia/cms@0.220.0/dist/sveltia-cms.js',
+          'https://unpkg.com/@sveltia/cms@0.220.0/dist/sveltia-cms.js',
+        ];
+        const PANTALLA = document.getElementById('arranque');
+        const TEXTO = document.getElementById('arranque-texto');
+        const DETALLE = document.getElementById('arranque-detalle');
+        const BOTON = document.getElementById('arranque-reintentar');
+        const propios = ['arranque', 'vista', 'vista-abrir'];
+        let cual = 0;
+        let falla = '';
+        let reloj = null;
+
+        // Si algo del panel explota, se muestra el motivo en vez de dejar la
+        // pantalla vacía: así se sabe si fue la conexión o el navegador.
+        addEventListener('error', e => {
+          if (e.message && !falla) falla = e.message;
+        }, true);
+
+        const rendirse = (motivo, detalle) => {
+          clearTimeout(reloj);
+          TEXTO.textContent = motivo;
+          DETALLE.textContent = detalle || falla || '';
+          BOTON.classList.add('se-ve');
+          PANTALLA.hidden = false;
+        };
+
+        // El panel ya se dibujó cuando cuelga algo suyo del cuerpo de la página.
+        const listo = () => [...document.body.children].some(
+          el => !propios.includes(el.id) && !['SCRIPT', 'STYLE', 'LINK'].includes(el.tagName));
+
+        const vigilar = () => {
+          if (listo()) { PANTALLA.hidden = true; return; }
+          reloj = setTimeout(vigilar, 250);
+        };
+
+        const cargar = () => {
+          if (cual >= COPIAS.length) {
+            rendirse('No se pudo descargar el panel.',
+              'Se probó desde el sitio y desde dos copias en internet, y ninguna respondió.');
+            return;
+          }
+          const copia = COPIAS[cual];
+          const s = document.createElement('script');
+          s.src = copia;
+          s.onerror = () => { cual += 1; TEXTO.innerHTML = '<span class="puntos">Probando otra copia</span>'; cargar(); };
+          document.head.appendChild(s);
+        };
+
+        BOTON.addEventListener('click', () => location.reload());
+
+        // Si en 25 segundos el panel no se dibujó, algo salió mal igual.
+        setTimeout(() => {
+          if (!listo()) rendirse('El panel no llegó a abrirse.',
+            falla || 'Puede ser la conexión, o que este navegador sea muy viejo para el panel. Probá desde otro teléfono o desde la computadora.');
+        }, 25000);
+
+        cargar();
+        vigilar();
+      })();
+    </script>
     <script src="mapa.js"></script>
 
     <!-- Vista previa: la web de verdad, al lado del panel en la compu y abajo en
