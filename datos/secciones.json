@@ -31,16 +31,6 @@
       "visible": true
     },
     {
-      "type": "fija",
-      "seccion": "ubicacion",
-      "visible": true
-    },
-    {
-      "type": "fija",
-      "seccion": "clasicos",
-      "visible": true
-    },
-    {
       "type": "nueva",
       "visible": true,
       "titulo": "Nuestros cuadros",
@@ -56,6 +46,16 @@
       "boton_texto": "",
       "boton_enlace": "",
       "foto": "/img/subidas/img_2332.webp"
+    },
+    {
+      "type": "fija",
+      "seccion": "clasicos",
+      "visible": true
+    },
+    {
+      "type": "fija",
+      "seccion": "ubicacion",
+      "visible": true
     }
   ]
 }
