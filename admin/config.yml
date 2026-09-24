@@ -77,17 +77,22 @@ collections:
                     name: texto
                     widget: text
                     required: false
-                  - label: Foto (opcional)
-                    name: foto
-                    widget: image
+                  - label: "Fotos (opcional)"
+                    name: fotos
+                    widget: list
                     required: false
+                    hint: "Podés poner una o varias. Tocá “Agregar” por cada foto: se acomodan solas."
+                    field:
+                      label: Foto
+                      name: imagen
+                      widget: image
                   - label: "Forma de la sección"
                     name: estilo
                     widget: select
                     default: texto_foto
                     options:
-                      - { label: "Texto a la izquierda y foto a la derecha", value: texto_foto }
-                      - { label: "Todo centrado, con la foto arriba", value: centrado }
+                      - { label: "Texto a la izquierda y las fotos a la derecha", value: texto_foto }
+                      - { label: "Todo centrado, con las fotos arriba", value: centrado }
                   - label: "Texto del botón (opcional)"
                     name: boton_texto
                     widget: string

@@ -1311,9 +1311,25 @@
         const boton = b.boton_texto && enlace
           ? `<a href="${esc(enlace)}"${externo} class="mt-8 inline-flex items-center gap-2 bg-brandGreen hover:bg-brandGreenLight text-black font-display font-extrabold text-lg px-8 py-4 uppercase tracking-wider shadow-neon-green transition-all transform hover:-translate-y-0.5">${esc(b.boton_texto)}</a>`
           : '';
-        const foto = b.foto
-          ? `<img src="${esc(assetPath(b.foto))}" alt="${titulo || 'Foto de Retro Green Salón'}" loading="lazy" class="w-full h-full object-cover" />`
-          : '';
+        // Una foto, varias, o ninguna. "foto" (en singular) es como se guardaba
+        // antes: se sigue aceptando para no perder lo que ya estuviera cargado.
+        const fotos = (Array.isArray(b.fotos) ? b.fotos : [])
+          .map(f => (typeof f === 'string' ? f : f && f.imagen))
+          .filter(Boolean);
+        if (!fotos.length && b.foto) fotos.push(b.foto);
+        const alt = titulo || 'Foto de Retro Green Salón';
+        const marco = (src, alto, extra = '') =>
+          `<div class="bg-black border-2 border-white/20 p-2 shadow-2xl ${alto} ${extra}">
+            <img src="${esc(assetPath(src))}" alt="${alt}" loading="lazy" class="w-full h-full object-cover" />
+          </div>`;
+        // Con una sola queda grande, como estaba. Con varias, en dos columnas,
+        // y si sobra una al final ocupa el ancho entero en vez de dejar hueco.
+        const grilla = (unaSola, enGrilla) => {
+          if (!fotos.length) return '';
+          if (fotos.length === 1) return marco(fotos[0], unaSola);
+          const ancho = i => (i === fotos.length - 1 && i % 2 === 0 ? 'col-span-2' : '');
+          return `<div class="grid grid-cols-2 gap-3">${fotos.map((f, i) => marco(f, enGrilla, ancho(i))).join('')}</div>`;
+        };
         const encabezado = `<h2 class="font-display text-4xl sm:text-6xl font-black uppercase tracking-tight text-white leading-none mb-6">${titulo}${verde}</h2>`;
 
         const s = document.createElement('section');
@@ -1322,20 +1338,20 @@
         if (b.estilo === 'centrado') {
           s.innerHTML = `
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-              ${foto ? `<div class="mb-10 bg-black border-2 border-white/20 p-2 shadow-2xl h-[300px] sm:h-[420px]">${foto}</div>` : ''}
+              ${fotos.length ? `<div class="mb-10">${grilla('h-[300px] sm:h-[420px]', 'h-[200px] sm:h-[260px]')}</div>` : ''}
               ${encabezado}${texto}${boton}
             </div>`;
         } else {
           s.innerHTML = `
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-                <div class="${foto ? 'lg:col-span-7' : 'lg:col-span-12'} flex flex-col justify-center items-start">
+                <div class="${fotos.length ? 'lg:col-span-7' : 'lg:col-span-12'} flex flex-col justify-center items-start">
                   <span class="w-8 h-[2px] bg-brandGreen mb-5 block"></span>
                   ${encabezado}${texto}${boton}
                 </div>
-                ${foto ? `<div class="lg:col-span-5 relative">
-                  <div class="absolute -inset-3 bg-brandGreen/20 border border-brandGreen/50 transform rotate-2 pointer-events-none"></div>
-                  <div class="relative bg-black border-2 border-white/20 p-2 shadow-2xl h-[420px]">${foto}</div>
+                ${fotos.length ? `<div class="lg:col-span-5 relative">
+                  ${fotos.length === 1 ? '<div class="absolute -inset-3 bg-brandGreen/20 border border-brandGreen/50 transform rotate-2 pointer-events-none"></div>' : ''}
+                  <div class="relative">${grilla('h-[420px]', 'h-[190px]')}</div>
                 </div>` : ''}
               </div>
             </div>`;

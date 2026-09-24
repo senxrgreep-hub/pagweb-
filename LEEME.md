@@ -163,9 +163,13 @@ Ahí se hace todo:
 - **Apagar una parte**: el interruptor. Desaparece de la web y también del menú y del pie. No se borra
   nada: el contenido queda guardado y vuelve cuando se prende de nuevo.
 - **Cambiar el orden**: arrastrando de las rayitas.
-- **Agregar una sección nueva**: **Agregar → Sección nueva**. Se le pone título, texto, una foto y,
-  si se quiere, un botón. Hay dos formas: *texto a la izquierda con foto a la derecha*, o *todo
-  centrado*. Queda con los mismos colores y la misma tipografía que el resto de la página.
+- **Agregar una sección nueva**: **Agregar → Sección nueva**. Se le pone título, texto, las fotos que
+  se quieran y, si hace falta, un botón. Hay dos formas: *texto a la izquierda con las fotos a la
+  derecha*, o *todo centrado*. Queda con los mismos colores y la misma tipografía que el resto.
+
+  Las fotos se cargan una por una con **Agregar**, se ordenan con las flechitas y se sacan con la ✕.
+  Con una sola foto se ve grande, como siempre; con varias se acomodan en dos columnas, y si queda
+  una impar al final ocupa el ancho entero para no dejar un hueco.
 
 Si el archivo se rompe o queda con menos de tres partes, la página se muestra completa, como está
 escrita en el HTML.
