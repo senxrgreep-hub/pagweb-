@@ -7,7 +7,7 @@
       "descripcion": "Barbero con experiencia hace 9 años en Retro Green"
     },
     {
-      "imagen": "/img/subidas/1000065111.webp",
+      "imagen": "/img/subidas/img_2388.webp",
       "etiqueta": "Barbero",
       "titulo": "Pedro Gallo",
       "descripcion": "Barbero con experiencia de 2 años en Retro Green"
@@ -23,6 +23,12 @@
       "etiqueta": "",
       "titulo": "Corte",
       "descripcion": "Autor: Ezequiel Loureiro"
+    },
+    {
+      "imagen": "/img/subidas/img_1938.webp",
+      "etiqueta": "",
+      "titulo": "Corte",
+      "descripcion": "Autor: Pedro Gallo"
     },
     {
       "imagen": "/img/subidas/img_2443.webp",
