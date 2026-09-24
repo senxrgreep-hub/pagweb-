@@ -2,11 +2,11 @@
   "filas": [
     {
       "dias": "Martes a sábados",
-      "horario": "10:00 a 20:30 hs"
+      "horario": "10:00 13:00 y de 16:30 a 21:00 hs"
     },
     {
-      "dias": "Domingos y lunes",
-      "horario": "Cerrado (escuchando discos)"
+      "dias": "Domingo cerrado.",
+      "horario": "Lunes (Con Pedro) 17:00 a 21:00 hs"
     }
   ]
 }
