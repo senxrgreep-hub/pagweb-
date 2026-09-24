@@ -4,19 +4,13 @@
       "imagen": "/img/subidas/img_2431.webp",
       "etiqueta": "Barbero",
       "titulo": "Ezequiel Loureiro",
-      "descripcion": "Barbero con experiencia hace 9 años en Retro Green"
+      "descripcion": "Con experiencia hace 9 años, Eze es socio en Retro Green, con el vas a elevar el servicio a otro nivel, pero ojo, su cartera de clientes es muy grande anticípate unos días si queres cortarte con el."
     },
     {
       "imagen": "/img/subidas/img_2388.webp",
       "etiqueta": "Barbero",
       "titulo": "Pedro Gallo",
-      "descripcion": "Barbero con experiencia de 2 años, y capacitándose en Retro Green"
-    },
-    {
-      "imagen": "/img/subidas/img_2445.webp",
-      "etiqueta": "Barber Gear",
-      "titulo": "SILLÓN CLÁSICO & ESPEJOS",
-      "descripcion": "Estética auténtica para disfrutar de cada corte."
+      "descripcion": "Con experiencia de 2 años, y capacitándose en Retro Green y Miller ‘s. Pedro lo definiríamos delicado y detallista con muchas ganas de aprender más dia a dia."
     },
     {
       "imagen": "/img/subidas/img_1936.webp",
@@ -26,15 +20,27 @@
     },
     {
       "imagen": "/img/subidas/img_1938.webp",
-      "etiqueta": "",
-      "titulo": "Corte",
+      "etiqueta": "Corte",
+      "titulo": "Mullet",
       "descripcion": "Autor: Pedro Gallo"
+    },
+    {
+      "imagen": "/img/subidas/img_0120.webp",
+      "etiqueta": "Peluquera estilista, colorista",
+      "titulo": "Anahí Chaszkes",
+      "descripcion": "13 años de experiencia lo dicen todo, Además de ser Socia en Retro Green, Ani es la mejor en su campo, sus estudios en la academia “bella” fue por varios años, y continúa capacitándose, sus turnos cortes y alisados no necesitan mucho anticipo, pero para Mechas o balayages si, asi que ya saben chicxs avisados."
+    },
+    {
+      "imagen": "/img/subidas/img_0121.webp",
+      "etiqueta": "Color",
+      "titulo": "Mechas",
+      "descripcion": "Autora: Anahí Chaszkes"
     },
     {
       "imagen": "/img/subidas/img_2443.webp",
       "etiqueta": "Atmósfera",
       "titulo": "Juguetes exhibidos, decoración de la época",
-      "descripcion": "Verde retro, violeta de fondo y un ambiente único en la ciudad de Córdoba."
+      "descripcion": "Cuadros tipo museo Retro, juguetes y mucho más"
     }
   ]
 }
