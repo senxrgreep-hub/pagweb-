@@ -12,6 +12,11 @@
     },
     {
       "type": "fija",
+      "seccion": "galeria",
+      "visible": true
+    },
+    {
+      "type": "fija",
       "seccion": "servicios",
       "visible": true
     },
@@ -19,11 +24,6 @@
       "type": "fija",
       "seccion": "nosotros",
       "visible": false
-    },
-    {
-      "type": "fija",
-      "seccion": "galeria",
-      "visible": true
     },
     {
       "type": "fija",
