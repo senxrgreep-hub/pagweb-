@@ -223,8 +223,8 @@ Probado con lo peor que se puede llegar a guardar:
 | Escribe el WhatsApp sin el código del país | Avisa al guardar; si igual queda mal, los botones siguen con el número anterior. |
 | Pega el enlace completo de Instagram | Saca el usuario solo y arma bien el enlace. |
 | Borra todas las fotos de la galería o todos los horarios | Vuelve a mostrar los que tenía. |
-| Carga 9 fotos en la galería o 6 filas de horarios | Las acomoda igual, sin huecos. |
-| Sube a la galería fotos verticales, horizontales o cuadradas | Las muestra enteras, con su forma, sin cortarles nada. |
+| Carga 7 o 9 fotos en la galería, o 6 filas de horarios | Las acomoda igual, sin huecos: si las fotos no dan filas parejas, la última fila lleva una más. |
+| Sube a la galería fotos verticales, horizontales o cuadradas | En la compu y la tablet, las de una misma fila quedan del mismo tamaño: a la más ancha se le recorta un poco de los costados, nunca la cabeza. En el celular se ven enteras. |
 | Sube una foto que no existe o la borra del repositorio | Deja el hueco de esa foto, el resto sigue funcionando. |
 
 El enlace del crédito del pie (el WhatsApp de Martín) no se toca desde el panel.
